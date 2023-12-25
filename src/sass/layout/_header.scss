@@ -1,0 +1,31 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.header {
+  @include flex($align: center, $justify: space-around);
+  @include absolute(0, 0, auto, 0);
+
+  padding: 1.5rem 0;
+}
+
+.website-logo {
+  @include flex($align: center, $gap: $gap-small);
+
+  &__icon {
+    @include dimensions(3.5rem, 3.5rem);
+  }
+
+  &__heading {
+    @include font($size: $fs-large, $weight: $fw-bold);
+
+    color: $color-grey;
+    letter-spacing: $ls-medium;
+  }
+}
+
+.hamburger-menu {
+  @include dimensions(3rem, 3rem);
+
+  color: $color-grey;
+  cursor: pointer;
+}

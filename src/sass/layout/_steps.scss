@@ -1,0 +1,87 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.steps {
+  @include flex($direction: column, $align: center, $gap: $gap-large);
+  @include colors($color-main, $color-grey);
+
+  text-align: center;
+  padding: 7.5rem 0;
+
+  &__heading {
+    @include font($size: $fs-extra-large, $family: $ff-serif);
+
+    letter-spacing: $ls-small;
+  }
+
+  &__list {
+    @include flex($gap: $gap-medium);
+
+    width: 100%;
+    overflow-x: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  &__separator {
+    @include dimensions(80%, 0.1rem);
+
+    background-color: $color-accent;
+    border: 0;
+  }
+
+  &__cta {
+    @include flex($direction: column, $gap: $gap-small);
+  }
+}
+
+.step {
+  @include flex($gap: $gap-medium);
+
+  &__content {
+    @include flex($direction: column, $gap: $gap-medium);
+  }
+
+  &__image {
+    width: 25rem;
+    height: 25rem;
+  }
+
+  &__text-content {
+    @include flex($direction: column, $gap: $gap-small);
+  }
+
+  &__heading {
+    @include font($size: $fs-small, $weight: $fw-bold);
+
+    letter-spacing: $ls-large;
+    text-transform: uppercase;
+  }
+
+  &__description {
+    @include font($size: $fs-medium, $height: $lh-large, $family: $ff-serif);
+  }
+
+  &__separator {
+    max-width: 12rem;
+  }
+}
+
+.cta-block {
+  &__heading {
+    @include font($size: $fs-large, $family: $ff-serif);
+  }
+
+  &__button {
+    @include colors($color-grey, $color-main);
+    @include font($size: $fs-medium, $weight: $fw-semi-bold);
+
+    border-radius: $br-maximum;
+    padding: 1.85rem 8rem;
+    cursor: pointer;
+  }
+}

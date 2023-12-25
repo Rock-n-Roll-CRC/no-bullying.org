@@ -1,0 +1,49 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.features {
+  @include colors($color-grey, $color-main);
+}
+
+.feature {
+  @include flex($direction: column, $gap: $gap-medium);
+
+  padding: 4rem;
+
+  &:not(:last-child) {
+    border-bottom: 0.1rem solid $color-grey;
+  }
+
+  &__heading-box {
+    @include flex($align: center, $gap: $gap-small);
+  }
+
+  &__icon {
+    @include dimensions(3.5rem, 3.5rem);
+  }
+
+  &__heading {
+    @include font(
+      $size: $fs-extra-large,
+      $weight: $fw-bold,
+      $family: $ff-serif
+    );
+
+    letter-spacing: $ls-small;
+  }
+
+  &__description {
+    @include font($size: $fs-medium);
+  }
+
+  &__slogan {
+    @include font($size: $fs-medium, $weight: $fw-semi-bold);
+  }
+
+  &__read-more {
+    @include font($size: $fs-medium, $weight: $fw-medium);
+
+    color: $color-accent;
+    text-decoration: underline;
+  }
+}

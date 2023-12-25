@@ -1,0 +1,65 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.contacts {
+  @include flex($direction: column, $gap: $gap-large);
+
+  background: no-repeat center/cover url("../src/assets/images/contacts.jpg"),
+    $color-grey;
+  background-blend-mode: overlay;
+  padding: 7.5rem 4rem;
+
+  &__heading-box {
+    @include flex($direction: column, $align: center, $gap: $gap-medium);
+
+    color: $color-main;
+    text-align: center;
+  }
+
+  &__heading {
+    @include font($size: $fs-extra-large, $family: $ff-serif);
+
+    letter-spacing: $ls-small;
+  }
+
+  &__description {
+    @include font($size: $fs-medium, $height: $lh-large);
+  }
+
+  &__list {
+    @include flex($direction: column, $align: center, $gap: $gap-medium);
+  }
+}
+
+.contact {
+  @include flex($direction: column, $gap: $gap-medium);
+  @include dimensions($width: 30rem);
+
+  color: $color-grey;
+  border-radius: $br-large;
+  padding: 2.5rem;
+
+  &--color-main {
+    background-color: $color-main;
+  }
+
+  &--color-accent {
+    background-color: $color-accent;
+  }
+
+  &__icon {
+    @include dimensions(5rem, 5rem);
+  }
+
+  &__text-content {
+    @include flex($direction: column, $gap: $gap-small);
+  }
+
+  &__heading {
+    @include font($size: $fs-medium, $weight: $fw-bold);
+  }
+
+  &__description {
+    @include font($size: $fs-small);
+  }
+}

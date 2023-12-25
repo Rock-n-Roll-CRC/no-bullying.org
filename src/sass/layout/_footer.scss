@@ -1,0 +1,13 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.footer {
+  @include flex($align: center, $justify: space-around);
+  @include colors($color-grey, $color-main);
+
+  height: 5rem;
+
+  &__copyright {
+    @include font($size: $fs-medium);
+  }
+}

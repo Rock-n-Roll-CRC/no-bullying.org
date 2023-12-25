@@ -1,0 +1,63 @@
+/* ******************************************** */
+
+/* TYPOGRAPHY SYSTEM */
+
+/* ******************************************** */
+
+// 01 - Font Family
+$ff-serif: merriweather, serif;
+$ff-sans-serif: inter, sans-serif;
+
+// 02 - Font Size
+$fs-extra-small: 1.2rem;
+$fs-small: 1.44rem;
+$fs-medium: 1.728rem;
+$fs-large: 2.074rem;
+$fs-extra-large: 2.488rem;
+
+// 03 - Font Weight
+$fw-regular: 400;
+$fw-medium: 500;
+$fw-semi-bold: 600;
+$fw-bold: 700;
+
+// 04 - Letter Spacing
+$ls-small: -0.05rem;
+$ls-medium: 0.1rem;
+$ls-large: 0.35rem;
+
+// 05 - Line Height
+$lh-extra-small: 1.2;
+$lh-small: 1.3;
+$lh-medium: 1.5;
+$lh-large: 1.7;
+$lh-extra-large: 2;
+
+/* ******************************************** */
+
+/* COLOR SYSTEM */
+
+/* ******************************************** */
+
+$color-main: #344e41;
+$color-accent: #a3b18a;
+$color-grey: #dad7cd;
+
+/* ******************************************** */
+
+/* BORDER RADIUS SYSTEM */
+
+/* ******************************************** */
+
+$br-large: 2.5rem;
+$br-maximum: 1000rem;
+
+/* ******************************************** */
+
+/* WHITESPACE SYSTEM */
+
+/* ******************************************** */
+
+$gap-small: 1.25rem;
+$gap-medium: 3rem;
+$gap-large: 5rem;

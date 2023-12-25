@@ -1,0 +1,11 @@
+@use "../abstracts/variables" as *;
+@use "sass:string" as str;
+
+html {
+  font-size: 55%;
+}
+
+body,
+h2 {
+  font: $fw-regular $fs-medium str.unquote("/") $lh-medium $ff-sans-serif;
+}

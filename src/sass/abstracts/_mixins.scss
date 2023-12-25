@@ -1,0 +1,30 @@
+@mixin dimensions($width, $height: null) {
+  width: 100%;
+  max-width: $width;
+  height: $height;
+}
+
+@mixin absolute($top: null, $right: null, $bottom: null, $left: null) {
+  position: absolute;
+  inset: $top $right $bottom $left;
+}
+
+@mixin flex($direction: null, $align: null, $justify: null, $gap: null) {
+  display: flex;
+  flex-direction: $direction;
+  align-items: $align;
+  justify-content: $justify;
+  gap: $gap;
+}
+
+@mixin colors($color, $background-color) {
+  color: $color;
+  background-color: $background-color;
+}
+
+@mixin font($size: null, $weight: null, $height: null, $family: null) {
+  font-size: $size;
+  font-weight: $weight;
+  line-height: $height;
+  font-family: $family;
+}

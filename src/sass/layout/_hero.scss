@@ -1,0 +1,31 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.hero {
+  @include flex($direction: column, $align: center, $gap: $gap-medium);
+
+  height: 56.8rem;
+  color: $color-grey;
+  text-align: center;
+  background: no-repeat center/cover url("../src/assets/images/hero.jpg");
+  padding-top: 11rem;
+
+  &__heading {
+    @include font($size: $fs-large, $family: $ff-serif);
+
+    letter-spacing: $ls-small;
+  }
+
+  &__description {
+    @include font($size: $fs-small, $height: $lh-large);
+  }
+
+  &__cta {
+    @include colors($color-main, $color-grey);
+    @include font($size: $fs-extra-small, $weight: $fw-semi-bold);
+
+    border-radius: $br-maximum;
+    padding: 1.25rem 2.5rem;
+    cursor: pointer;
+  }
+}
