@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <svg xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <symbol id="no-bullying" viewBox="0 0 517 490">
+    <symbol id="website-logo" viewBox="0 0 517 490">
       <path fill="#e0ded5" d="
         M 254.94 80.26
         Q 254.77 80.20 254.60 80.13
@@ -753,6 +753,10 @@
         C 447.82 456.27 447.34 456.70 447.15 457.35
         Z"
       />
+    </symbol>
+    
+    <symbol id="hamburger-menu" viewBox="0 0 512 512">
+      <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="32" d="M80 160h352M80 256h352M80 352h352"/>
     </symbol>
   </defs>
 </svg>

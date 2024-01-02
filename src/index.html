@@ -16,24 +16,24 @@
     <link
       rel="apple-touch-icon"
       sizes="180x180"
-      href="./src/assets/icons/favicon/apple-touch-icon.png"
+      href="./assets/icons/favicon/apple-touch-icon.png"
     />
     <link
       rel="icon"
       type="image/png"
       sizes="32x32"
-      href="./src/assets/icons/favicon/favicon-32x32.png"
+      href="./assets/icons/favicon/favicon-32x32.png"
     />
     <link
       rel="icon"
       type="image/png"
       sizes="16x16"
-      href="./src/assets/icons/favicon/favicon-16x16.png"
+      href="./assets/icons/favicon/favicon-16x16.png"
     />
-    <link rel="manifest" href="./src/assets/icons/favicon/site.webmanifest" />
+    <link rel="manifest" href="./assets/icons/favicon/site.webmanifest" />
 
     <!-- Linking Styles -->
-    <link rel="stylesheet" href="./dist/main.css" />
+    <link rel="stylesheet" href="./css/main.css" />
 
     <!-- Linking Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -55,7 +55,7 @@
       <!-- Website Logo -->
       <div class="header__website-logo website-logo">
         <svg class="website-logo__icon">
-          <use href="./src/assets/icons/logos.svg#no-bullying" />
+          <use href="./assets/icons/header.svg#website-logo" />
         </svg>
 
         <h1 class="website-logo__heading">no-bullying.org</h1>
@@ -63,7 +63,7 @@
 
       <!-- Hamburger Menu -->
       <svg class="header__hamburger-menu hamburger-menu">
-        <use href="./src/assets/icons/other.svg#hamburger-menu" />
+        <use href="./assets/icons/header.svg#hamburger-menu" />
       </svg>
     </header>
 
@@ -97,7 +97,7 @@
           <li class="steps__list-item step">
             <div class="step__content">
               <svg class="step__image">
-                <use href="./src/assets/illustrations/steps.svg#step-1" />
+                <use href="./assets/illustrations/steps.svg#step-1" />
               </svg>
 
               <div class="step__text-content">
@@ -112,7 +112,7 @@
             </div>
 
             <svg class="step__separator">
-              <use href="./src/assets/illustrations/steps.svg#arrow-down" />
+              <use href="./assets/illustrations/steps.svg#arrow-down" />
             </svg>
           </li>
 
@@ -120,7 +120,7 @@
           <li class="steps__list-item step">
             <div class="step__content">
               <svg class="step__image">
-                <use href="./src/assets/illustrations/steps.svg#step-2" />
+                <use href="./assets/illustrations/steps.svg#step-2" />
               </svg>
 
               <div class="step__text-content">
@@ -135,7 +135,7 @@
             </div>
 
             <svg class="step__separator">
-              <use href="./src/assets/illustrations/steps.svg#arrow-up" />
+              <use href="./assets/illustrations/steps.svg#arrow-up" />
             </svg>
           </li>
 
@@ -143,7 +143,7 @@
           <li class="steps__list-item step">
             <div class="step__content">
               <svg class="step__image">
-                <use href="./src/assets/illustrations/steps.svg#step-3" />
+                <use href="./assets/illustrations/steps.svg#step-3" />
               </svg>
 
               <div class="step__text-content">
@@ -169,70 +169,58 @@
         </div>
       </section>
 
-      <!-- Features -->
-      <section class="features">
-        <ul class="features__list">
-          <!-- Feature 1 -->
-          <li class="features__list-item feature">
-            <div class="feature__heading-box">
-              <svg class="feature__icon">
-                <use href="./src/assets/icons/features.svg#feature-1" />
-              </svg>
+      <!-- Statistics -->
+      <section class="statistics">
+        <ul class="statistics__list">
+          <!-- Statistic 1 -->
+          <li class="statistics__list-item statistic">
+            <svg class="statistic__icon">
+              <use href="./assets/icons/statistics.svg#statistic-1" />
+            </svg>
 
-              <h3 class="feature__heading">Quizzes</h3>
+            <div class="statistic__text-content">
+              <p class="statistic__figure">20.2%</p>
+
+              <p class="statistic__description">
+                of surveyed students report
+                <br />
+                being bullied
+              </p>
             </div>
-
-            <p class="feature__description">
-              Once you finish our main quiz and get your action plan, we
-              strongly recommend checking out some more quizzes made by us for
-              you.
-            </p>
-
-            <p class="feature__slogan">Find answers to your questions.</p>
-
-            <a href="#" class="feature__read-more">Read more &rarr;</a>
           </li>
 
-          <!-- Feature 2 -->
-          <li class="features__list-item feature">
-            <div class="feature__heading-box">
-              <svg class="feature__icon">
-                <use href="./src/assets/icons/features.svg#feature-2" />
-              </svg>
+          <!-- Statistic 2 -->
+          <li class="statistics__list-item statistic">
+            <svg class="statistic__icon">
+              <use href="./assets/icons/statistics.svg#statistic-2" />
+            </svg>
 
-              <h3 class="feature__heading">Learn</h3>
+            <div class="statistic__text-content">
+              <p class="statistic__figure">46.0%</p>
+
+              <p class="statistic__description">
+                of bullyied students notified
+                <br />
+                an adult at school
+              </p>
             </div>
-
-            <p class="feature__description">
-              We assembled all the information you need to know about bullying.
-              You will learn what bullying is, what types of bullying exist, the
-              scale of the problem and much more.
-            </p>
-
-            <p class="feature__slogan">Deep dive into the problem.</p>
-
-            <a href="#" class="feature__read-more">Read more &rarr;</a>
           </li>
 
-          <!-- Feature 3 -->
-          <li class="features__list-item feature">
-            <div class="feature__heading-box">
-              <svg class="feature__icon">
-                <use href="./src/assets/icons/features.svg#feature-3" />
-              </svg>
+          <!-- Statistic 3 -->
+          <li class="statistics__list-item statistic">
+            <svg class="statistic__icon">
+              <use href="./assets/icons/statistics.svg#statistic-3" />
+            </svg>
 
-              <h3 class="feature__heading">Motivation</h3>
+            <div class="statistic__text-content">
+              <p class="statistic__figure">41.0%</p>
+
+              <p class="statistic__description">
+                of bullied students think that
+                <br />
+                the bullying will not stop
+              </p>
             </div>
-
-            <p class="feature__description">
-              That may be difficult to concentrate on defending yourself,
-              especially when there is no one to cheer you up. That's why we're
-              here!
-            </p>
-
-            <p class="feature__slogan">Feel your power.</p>
-
-            <a href="#" class="feature__read-more">Read more &rarr;</a>
           </li>
         </ul>
       </section>
@@ -257,7 +245,7 @@
           <!-- Contact 1 -->
           <li class="contacts__list-item contact contact--color-main">
             <svg class="contact__icon">
-              <use href="./src/assets/icons/contacts.svg#email" />
+              <use href="./assets/icons/contacts.svg#email" />
             </svg>
 
             <div class="contact__text-content">
@@ -270,7 +258,7 @@
           <!-- Contact 2 -->
           <li class="contacts__list-item contact contact--color-accent">
             <svg class="contact__icon">
-              <use href="./src/assets/icons/contacts.svg#helpline" />
+              <use href="./assets/icons/contacts.svg#helpline" />
             </svg>
 
             <div class="contact__text-content">

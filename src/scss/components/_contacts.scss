@@ -4,7 +4,7 @@
 .contacts {
   @include flex($direction: column, $gap: $gap-large);
 
-  background: no-repeat center/cover url("../src/assets/images/contacts.jpg"),
+  background: no-repeat center/cover url("../assets/images/contacts.jpg"),
     $color-grey;
   background-blend-mode: overlay;
   padding: 7.5rem 4rem;
