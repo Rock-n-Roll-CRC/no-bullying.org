@@ -1,0 +1,41 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.carousel {
+  @include colors($color-grey, $color-main);
+  @include flex($align: center, $gap: $gap-small);
+
+  padding: 7.1rem 2rem;
+
+  &__arrow-back,
+  &__arrow-next {
+    color: $color-accent;
+    background-color: transparent;
+    font-size: $fs-extra-large;
+  }
+}
+
+.quote {
+  @include colors($color-main, $color-grey);
+
+  border-radius: 0.2rem;
+
+  &__icon-1 {
+    display: inline;
+    width: 2rem;
+    height: 2rem;
+    vertical-align: text-top;
+  }
+
+  &__text {
+    @include font($size: $fs-medium);
+
+    display: inline;
+  }
+
+  &__icon-2 {
+    display: inline;
+    width: 1rem;
+    height: 1rem;
+  }
+}
