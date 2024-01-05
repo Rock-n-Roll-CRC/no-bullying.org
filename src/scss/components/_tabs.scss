@@ -42,6 +42,12 @@
 .tab-content {
   @include flex($direction: column, $gap: $gap-medium);
 
+  display: none;
+
+  &--active {
+    display: list-item;
+  }
+
   &__list {
     @include flex($direction: column, $gap: $gap-medium);
 

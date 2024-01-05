@@ -35,6 +35,9 @@
     <!-- Linking Styles -->
     <link rel="stylesheet" href="./css/main.css" />
 
+    <!-- Linking Scripts -->
+    <script src="./js/script.js" defer></script>
+
     <!-- Linking Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -225,26 +228,31 @@
         </ul>
       </section>
 
+      <!-- Tabs -->
       <section class="tabs">
         <h2 class="tabs__heading">What is bullying?</h2>
 
         <div class="tabs__lists">
           <ul class="tabs__list">
+            <!-- Tab 1 -->
             <li class="tabs__list-item tab tab--active">
               <p class="tab__heading">Definition</p>
             </li>
 
+            <!-- Tab 2 -->
             <li class="tabs__list-item tab">
               <p class="tab__heading">Types</p>
             </li>
 
+            <!-- Tab 3 -->
             <li class="tabs__list-item tab">
               <p class="tab__heading">Consequences</p>
             </li>
           </ul>
 
           <ul class="tabs__content-list">
-            <li class="tabs__content-list-item tab-content">
+            <!-- Tab Content 1 -->
+            <li class="tabs__content-list-item tab-content tab-content--active">
               <p class="tab-content__description">
                 In 2014 the U.S. Department of Education and the Center for
                 Disease Control defined bullying as having these components:
@@ -277,11 +285,10 @@
               </p>
             </li>
 
-            <li
-              class="tabs__content-list-item tab-content"
-              style="display: none"
-            >
+            <!-- Tab Content 2 -->
+            <li class="tabs__content-list-item tab-content">
               <ul class="tab-content__list">
+                <!-- Type 1 -->
                 <li class="tab-content__list-item type">
                   <h3 class="type__heading">Physical bullying</h3>
 
@@ -295,6 +302,7 @@
                   </p>
                 </li>
 
+                <!-- Type 2 -->
                 <li class="tab-content__list-item type">
                   <h3 class="type__heading">Verbal bullying</h3>
 
@@ -308,6 +316,7 @@
                   </p>
                 </li>
 
+                <!-- Type 3 -->
                 <li class="tab-content__list-item type">
                   <h3 class="type__heading">Cyberbullying</h3>
 
@@ -322,6 +331,7 @@
                   </p>
                 </li>
 
+                <!-- Type 4 -->
                 <li class="tab-content__list-item type">
                   <h3 class="type__heading">Social bullying</h3>
 
@@ -336,6 +346,7 @@
                   </p>
                 </li>
 
+                <!-- Type 5 -->
                 <li class="tab-content__list-item type">
                   <h3 class="type__heading">Sexual bullying</h3>
 
@@ -350,6 +361,7 @@
                   </p>
                 </li>
 
+                <!-- Type 6 -->
                 <li class="tab-content__list-item type">
                   <h3 class="type__heading">Racial bullying</h3>
 
@@ -365,11 +377,10 @@
               </ul>
             </li>
 
-            <li
-              class="tabs__content-list-item tab-content"
-              style="display: none"
-            >
+            <!-- Tab Content 3 -->
+            <li class="tabs__content-list-item tab-content">
               <ul class="tab-content__list">
+                <!-- Consequence 1 -->
                 <li class="tab-content__list-item consequence">
                   <h3 class="consequence__heading">Psychological Effects</h3>
 
@@ -385,6 +396,7 @@
                   </p>
                 </li>
 
+                <!-- Consequence 2 -->
                 <li class="tab-content__list-item consequence">
                   <h3 class="consequence__heading">Physical Effects</h3>
 
@@ -401,6 +413,7 @@
                   </p>
                 </li>
 
+                <!-- Consequence 3 -->
                 <li class="tab-content__list-item consequence">
                   <h3 class="consequence__heading">Academic Effects</h3>
 
@@ -420,30 +433,110 @@
 
       <!-- Carousel -->
       <section class="carousel">
-        <button class="carousel__arrow-back">&#129104;</button>
-
-        <ul class="carousel__quotes">
-          <li class="carousel__quotes-item quote">
-            <div class="quote__text-box">
-              <svg class="quote__icon-1">
-                <use href="./assets/icons/quotes.svg#quote-1" />
+        <ul class="carousel__list">
+          <li class="carousel__list-item quote quote--active">
+            <p class="quote__text">
+              <svg class="quote__left-mark">
+                <use href="./assets/icons/carousel.svg#left-mark" />
               </svg>
-
-              <p class="quote__text">
-                Life is a fight, but not everyone's a fighter. Otherwise,
-                bullies would be an endangered species.
-              </p>
-
-              <svg class="quote__icon-2">
-                <use href="./assets/icons/quotes.svg#quote-2" />
+              Life is a fight, but not everyone's a fighter. Otherwise, bullies
+              would be an endangered species.
+              <svg class="quote__right-mark">
+                <use href="./assets/icons/carousel.svg#right-mark" />
               </svg>
-            </div>
+            </p>
 
             <p class="quote__author">Andrew Vachss</p>
           </li>
+
+          <li class="carousel__list-item quote">
+            <p class="quote__text">
+              <svg class="quote__left-mark">
+                <use href="./assets/icons/carousel.svg#left-mark" />
+              </svg>
+              Bullies don't like to fight, son. They like to win. Being afraid
+              is normal. The only fight you really have to win is the one
+              against the fear.
+              <svg class="quote__right-mark">
+                <use href="./assets/icons/carousel.svg#right-mark" />
+              </svg>
+            </p>
+
+            <p class="quote__author">Kwame Alexander</p>
+          </li>
+
+          <li class="carousel__list-item quote">
+            <p class="quote__text">
+              <svg class="quote__left-mark">
+                <use href="./assets/icons/carousel.svg#left-mark" />
+              </svg>
+              You don't have to wait for someone to treat you bad repeatedly.
+              All it takes is once, and if they get away with it that once, if
+              they know they can treat you like that, then it sets the pattern
+              for the future.
+              <svg class="quote__right-mark">
+                <use href="./assets/icons/carousel.svg#right-mark" />
+              </svg>
+            </p>
+
+            <p class="quote__author">Jane Green</p>
+          </li>
+
+          <li class="carousel__list-item quote">
+            <p class="quote__text">
+              <svg class="quote__left-mark">
+                <use href="./assets/icons/carousel.svg#left-mark" />
+              </svg>
+              Bullying is a horrible thing. It sticks with you forever. It
+              poisons you. But only if you let it.
+              <svg class="quote__right-mark">
+                <use href="./assets/icons/carousel.svg#right-mark" />
+              </svg>
+            </p>
+
+            <p class="quote__author">Heather Brewer</p>
+          </li>
+
+          <li class="carousel__list-item quote">
+            <p class="quote__text">
+              <svg class="quote__left-mark">
+                <use href="./assets/icons/carousel.svg#left-mark" />
+              </svg>
+              Often the right path is the one that may be hardest for you to
+              follow. But the hard path is also the one that will make you grow
+              as a human being.
+              <svg class="quote__right-mark">
+                <use href="./assets/icons/carousel.svg#right-mark" />
+              </svg>
+            </p>
+
+            <p class="quote__author">Karen Mueller Coombs</p>
+          </li>
         </ul>
 
-        <button class="carousel__arrow-next">&#129106;</button>
+        <div class="carousel__buttons">
+          <button class="carousel__button carousel__button--back">
+            &xlarr;
+          </button>
+
+          <button class="carousel__button carousel__button--next">
+            &xrarr;
+          </button>
+        </div>
+
+        <div class="carousel__nav">
+          <button class="carousel__indicator carousel__indicator--active">
+            &#9679;
+          </button>
+
+          <button class="carousel__indicator">&#9900;</button>
+
+          <button class="carousel__indicator">&#9900;</button>
+
+          <button class="carousel__indicator">&#9900;</button>
+
+          <button class="carousel__indicator">&#9900;</button>
+        </div>
       </section>
 
       <!-- Contacts -->

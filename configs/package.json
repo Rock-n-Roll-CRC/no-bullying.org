@@ -8,8 +8,10 @@
   "scripts": {
     "copy:assets": "copyfiles -u 1 ./src/assets/**/* public",
     "copy:html": "copyfiles -u 1 ./src/*.html public",
-    "watch:assets": "onchange \"/src/assets/**/*\" -- npm run copy:assets",
+    "copy:js": "copyfiles -u 1 ./src/js/*.js public",
+    "watch:assets": "onchange \"src/assets/**/*\" -- npm run copy:assets",
     "watch:html": "onchange \"src/*.html\" -- npm run copy:html",
+    "watch:js": "onchange \"src/js/*.js\" -- npm run copy:js",
     "watch:sass": "sass --watch src/scss:public/css",
     "build:sass": "sass src/scss:public/css",
     "serve": "browser-sync start --server public --files public",
