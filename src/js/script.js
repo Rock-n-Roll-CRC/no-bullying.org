@@ -1,3 +1,22 @@
+// Tabs
+const tabs = document.querySelectorAll(".tab");
+const tabContents = document.querySelectorAll(".tab-content");
+
+tabs.forEach((tab) => {
+  tab.addEventListener("click", () => {
+    const index = Array.from(tabs).indexOf(tab);
+    const currentTab = document.querySelector(".tab--active");
+    const currentTabContent = document.querySelector(".tab-content--active");
+
+    currentTab.classList.remove("tab--active");
+    tab.classList.add("tab--active");
+
+    currentTabContent.classList.remove("tab-content--active");
+    Array.from(tabContents)[index].classList.add("tab-content--active");
+  });
+});
+
+// Carousel
 const buttons = document.querySelectorAll(".carousel__button");
 const indicators = document.querySelectorAll(".carousel__indicator");
 
