@@ -9,6 +9,11 @@
   inset: $top $right $bottom $left;
 }
 
+@mixin fixed($top: null, $right: null, $bottom: null, $left: null) {
+  position: fixed;
+  inset: $top $right $bottom $left;
+}
+
 @mixin flex($direction: null, $align: null, $justify: null, $gap: null) {
   display: flex;
   flex-direction: $direction;

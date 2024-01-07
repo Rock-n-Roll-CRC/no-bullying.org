@@ -6,6 +6,10 @@
   @include absolute(0, 0, auto, 0);
 
   padding: 1.5rem 0;
+
+  &--active {
+    position: fixed;
+  }
 }
 
 .website-logo {
@@ -23,9 +27,27 @@
   }
 }
 
-.hamburger-menu {
+.hamburger-menu,
+.close-menu {
   @include dimensions(3rem, 3rem);
 
-  color: $color-grey;
   cursor: pointer;
+}
+
+.hamburger-menu {
+  color: $color-grey;
+
+  &--unactive {
+    display: none;
+  }
+}
+
+.close-menu {
+  display: none;
+  color: $color-main;
+
+  &--active {
+    display: block;
+    z-index: 999;
+  }
 }
