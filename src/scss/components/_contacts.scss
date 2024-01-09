@@ -4,7 +4,7 @@
 .contacts {
   @include flex($direction: column, $gap: $gap-large);
 
-  background: no-repeat center/cover url("../assets/images/contacts.jpg"),
+  background: no-repeat center/cover url("../assets/images/contacts.webp"),
     $color-grey;
   background-blend-mode: overlay;
   padding: 7.5rem 4rem;
@@ -23,7 +23,7 @@
   }
 
   &__description {
-    @include font($size: $fs-medium, $height: $lh-large);
+    line-height: $lh-large;
   }
 
   &__list {
@@ -56,10 +56,10 @@
   }
 
   &__heading {
-    @include font($size: $fs-medium, $weight: $fw-bold);
+    font-weight: $fw-bold;
   }
 
   &__description {
-    @include font($size: $fs-small);
+    font-size: $fs-small;
   }
 }

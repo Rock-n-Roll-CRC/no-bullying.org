@@ -63,7 +63,7 @@
   }
 
   &__description {
-    @include font($size: $fs-medium, $height: $lh-large, $family: $ff-serif);
+    @include font($height: $lh-large, $family: $ff-serif);
   }
 
   &__separator {
@@ -78,8 +78,8 @@
 
   &__button {
     @include colors($color-grey, $color-main);
-    @include font($size: $fs-medium, $weight: $fw-semi-bold);
 
+    font-weight: $fw-semi-bold;
     border-radius: $br-maximum;
     padding: 1.85rem 8rem;
     cursor: pointer;

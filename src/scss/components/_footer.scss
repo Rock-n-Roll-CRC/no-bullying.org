@@ -6,8 +6,4 @@
   @include colors($color-grey, $color-main);
 
   height: 5rem;
-
-  &__copyright {
-    @include font($size: $fs-medium);
-  }
 }

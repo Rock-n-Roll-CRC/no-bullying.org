@@ -2,8 +2,8 @@
 @use "../abstracts/mixins" as *;
 
 .tabs {
-  @include colors($color-main, $color-grey);
   @include flex($direction: column, $align: center, $gap: $gap-large);
+  @include colors($color-main, $color-grey);
 
   padding: 7.1rem 0;
 
@@ -34,18 +34,16 @@
   padding: 0 1.5rem 1rem;
   cursor: pointer;
 
-  &--active {
-    border-bottom: 0.3rem solid $color-main;
+  &--selected {
+    border-bottom-color: $color-main;
   }
 }
 
 .tab-content {
-  @include flex($direction: column, $gap: $gap-medium);
-
   display: none;
 
-  &--active {
-    display: list-item;
+  &--visible {
+    @include flex($direction: column, $gap: $gap-medium);
   }
 
   &__list {

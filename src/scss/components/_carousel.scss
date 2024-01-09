@@ -30,13 +30,11 @@
 }
 
 .quote {
-  @include flex($direction: column, $gap: $gap-small);
-
   display: none;
   padding: 0 2rem;
 
-  &--active {
-    display: list-item;
+  &--selected {
+    @include flex($direction: column, $gap: $gap-small);
   }
 
   &__left-mark {
@@ -54,7 +52,7 @@
   }
 
   &__text {
-    @include font($size: $fs-large);
+    font-size: $fs-large;
   }
 
   &__author {

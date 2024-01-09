@@ -27,7 +27,7 @@
   }
 
   &__description {
-    @include font($size: $fs-medium, $height: $lh-large);
+    @include font($height: $lh-large);
 
     text-align: center;
   }

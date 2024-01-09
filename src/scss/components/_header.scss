@@ -2,12 +2,12 @@
 @use "../abstracts/mixins" as *;
 
 .header {
+  @include position(absolute, 0, 0, auto, 0);
   @include flex($align: center, $justify: space-around);
-  @include absolute(0, 0, auto, 0);
 
   padding: 1.5rem 0;
 
-  &--active {
+  &--fixed {
     position: fixed;
   }
 }
@@ -37,7 +37,7 @@
 .hamburger-menu {
   color: $color-grey;
 
-  &--unactive {
+  &--hidden {
     display: none;
   }
 }
@@ -46,7 +46,7 @@
   display: none;
   color: $color-main;
 
-  &--active {
+  &--visible {
     display: block;
     z-index: 999;
   }

@@ -75,7 +75,7 @@
       </svg>
 
       <!-- Navigataion Menu -->
-      <nav class="navigation-menu">
+      <nav class="header__navigation-menu navigation-menu">
         <ul class="navigation-menu__list">
           <li class="navigation-menu__list-item">
             <a href="#steps" class="navigation-menu__link">How it works</a>
@@ -98,7 +98,7 @@
           </li>
 
           <li class="navigation-menu__list-item">
-            <a href="#" class="cta-block__button">Take the quiz</a>
+            <a href="#" class="navigation-menu__cta">Take the quiz</a>
           </li>
         </ul>
       </nav>
@@ -269,7 +269,7 @@
         <div class="tabs__lists">
           <ul class="tabs__list">
             <!-- Tab 1 -->
-            <li class="tabs__list-item tab tab--active">
+            <li class="tabs__list-item tab tab--selected">
               <p class="tab__heading">Definition</p>
             </li>
 
@@ -286,7 +286,9 @@
 
           <ul class="tabs__content-list">
             <!-- Tab Content 1 -->
-            <li class="tabs__content-list-item tab-content tab-content--active">
+            <li
+              class="tabs__content-list-item tab-content tab-content--visible"
+            >
               <p class="tab-content__description">
                 In 2014 the U.S. Department of Education and the Center for
                 Disease Control defined bullying as having these components:
@@ -468,7 +470,8 @@
       <!-- Carousel -->
       <section class="carousel" id="carousel">
         <ul class="carousel__list">
-          <li class="carousel__list-item quote quote--active">
+          <!-- Quote 1 -->
+          <li class="carousel__list-item quote quote--selected">
             <p class="quote__text">
               <svg class="quote__left-mark">
                 <use href="./assets/icons/carousel.svg#left-mark" />
@@ -483,6 +486,7 @@
             <p class="quote__author">Andrew Vachss</p>
           </li>
 
+          <!-- Quote 2 -->
           <li class="carousel__list-item quote">
             <p class="quote__text">
               <svg class="quote__left-mark">
@@ -499,6 +503,7 @@
             <p class="quote__author">Kwame Alexander</p>
           </li>
 
+          <!-- Quote 3 -->
           <li class="carousel__list-item quote">
             <p class="quote__text">
               <svg class="quote__left-mark">
@@ -516,6 +521,7 @@
             <p class="quote__author">Jane Green</p>
           </li>
 
+          <!-- Quote 4 -->
           <li class="carousel__list-item quote">
             <p class="quote__text">
               <svg class="quote__left-mark">
@@ -531,6 +537,7 @@
             <p class="quote__author">Heather Brewer</p>
           </li>
 
+          <!-- Quote 5 -->
           <li class="carousel__list-item quote">
             <p class="quote__text">
               <svg class="quote__left-mark">
@@ -549,17 +556,17 @@
         </ul>
 
         <div class="carousel__buttons">
-          <button class="carousel__button carousel__button--back">
+          <button class="carousel__button carousel__button-back">
             &xlarr;
           </button>
 
-          <button class="carousel__button carousel__button--next">
+          <button class="carousel__button carousel__button-next">
             &xrarr;
           </button>
         </div>
 
         <div class="carousel__nav">
-          <button class="carousel__indicator carousel__indicator--active">
+          <button class="carousel__indicator carousel__indicator--selected">
             &#9679;
           </button>
 
@@ -622,7 +629,7 @@
     <!-- Footer -->
     <footer class="footer">
       <!-- Copyright -->
-      <p class="footer__copyright">&copy; 2023 no-bullying.org</p>
+      <p class="footer__copyright">&copy; 2024 no-bullying.org</p>
     </footer>
   </body>
 </html>

@@ -2,13 +2,13 @@
 @use "../abstracts/mixins" as *;
 
 .navigation-menu {
-  @include fixed(0, 0, 0, 0);
+  @include position(fixed, 0, 0, 0, 0);
 
   display: none;
   background-color: $color-overlay;
   backdrop-filter: blur(5px);
 
-  &--active {
+  &--visible {
     @include flex($align: center, $justify: center);
   }
 
@@ -19,12 +19,21 @@
   }
 
   &__link {
-    color: $color-main;
-
     @include font(
       $size: $fs-extra-large,
       $weight: $fw-bold,
       $family: $ff-serif
     );
+
+    color: $color-main;
+  }
+
+  &__cta {
+    @include colors($color-grey, $color-main);
+    @include font($size: $fs-extra-large, $weight: $fw-semi-bold);
+
+    border-radius: $br-maximum;
+    padding: 1.7rem 3rem;
+    cursor: pointer;
   }
 }

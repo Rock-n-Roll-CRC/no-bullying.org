@@ -1,16 +1,11 @@
-@mixin dimensions($width, $height: null) {
-  width: 100%;
-  max-width: $width;
-  height: $height;
-}
-
-@mixin absolute($top: null, $right: null, $bottom: null, $left: null) {
-  position: absolute;
-  inset: $top $right $bottom $left;
-}
-
-@mixin fixed($top: null, $right: null, $bottom: null, $left: null) {
-  position: fixed;
+@mixin position(
+  $position,
+  $top: null,
+  $right: null,
+  $bottom: null,
+  $left: null
+) {
+  position: $position;
   inset: $top $right $bottom $left;
 }
 
@@ -20,6 +15,12 @@
   align-items: $align;
   justify-content: $justify;
   gap: $gap;
+}
+
+@mixin dimensions($width, $height: null) {
+  width: 100%;
+  max-width: $width;
+  height: $height;
 }
 
 @mixin colors($color, $background-color) {
