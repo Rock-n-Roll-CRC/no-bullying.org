@@ -1,12 +1,9 @@
 @use "../abstracts/variables" as *;
 @use "../abstracts/mixins" as *;
 
-.statistics {
-  @include colors($color-grey, $color-main);
-}
-
 .statistic {
   @include flex($direction: column, $align: center, $gap: $gap-medium);
+  @include colors($color-grey, $color-main);
 
   padding: 4rem;
 

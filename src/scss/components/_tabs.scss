@@ -42,7 +42,7 @@
 .tab-content {
   display: none;
 
-  &--visible {
+  &--selected {
     @include flex($direction: column, $gap: $gap-medium);
   }
 

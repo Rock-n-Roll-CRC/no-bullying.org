@@ -33,10 +33,6 @@
     background-color: $color-accent;
     border: 0;
   }
-
-  &__cta {
-    @include flex($direction: column, $gap: $gap-small);
-  }
 }
 
 .step {
@@ -72,6 +68,8 @@
 }
 
 .cta-block {
+  @include flex($direction: column, $gap: $gap-small);
+
   &__heading {
     @include font($size: $fs-large, $family: $ff-serif);
   }
