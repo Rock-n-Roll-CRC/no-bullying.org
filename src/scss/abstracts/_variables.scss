@@ -62,3 +62,27 @@ $br-maximum: 1000rem;
 $gap-small: 1.25rem;
 $gap-medium: 3rem;
 $gap-large: 5rem;
+
+/* ******************************************** */
+
+/* BREAKPOINT SYSTEM */
+
+/* ******************************************** */
+
+// 01 - Breakpoints Up
+$breakpoints-up: (
+  mobile-m: 23.438rem,
+  mobile-l: 26.563rem,
+  tablet: 48rem,
+  laptop: 64rem,
+  laptop-l: 90rem,
+);
+
+// 02 - Breakpoints Down
+$breakpoints-down: (
+  mobile-m: 23.42rem,
+  mobile-l: 26.55rem,
+  tablet: 47.9rem,
+  laptop: 63.9rem,
+  laptop-l: 89.9rem,
+);

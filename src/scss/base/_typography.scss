@@ -1,8 +1,17 @@
 @use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
 @use "sass:string" as str;
 
 html {
   font-size: 55%;
+
+  @include media-up(mobile-m) {
+    font-size: calc(55% + 0.4vw);
+  }
+
+  @include media-up(mobile-l) {
+    font-size: calc(55% + 0.6vw);
+  }
 }
 
 body,

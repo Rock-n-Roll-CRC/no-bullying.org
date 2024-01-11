@@ -1,3 +1,5 @@
+@use "./variables" as *;
+
 @mixin position(
   $position,
   $top: null,
@@ -33,4 +35,16 @@
   font-weight: $weight;
   line-height: $height;
   font-family: $family;
+}
+
+@mixin media-up($size) {
+  @media (min-width: map-get($breakpoints-up, $size)) {
+    @content;
+  }
+}
+
+@mixin media-down($size) {
+  @media (max-width: map-get($breakpoints-down, $size)) {
+    @content;
+  }
 }
