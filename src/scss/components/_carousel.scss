@@ -7,6 +7,13 @@
 
   padding: 7.1rem 0;
 
+  &__list {
+    @include media-up(tablet) {
+      display: flex;
+      justify-content: center;
+    }
+  }
+
   &__buttons {
     @include flex($justify: center, $gap: $gap-large);
   }
@@ -35,6 +42,8 @@
 
   &--selected {
     @include flex($direction: column, $gap: $gap-small);
+
+    max-width: 50rem;
   }
 
   &__left-mark {
