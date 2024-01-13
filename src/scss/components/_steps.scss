@@ -25,6 +25,10 @@
     &::-webkit-scrollbar {
       display: none;
     }
+
+    @include media-up(laptop) {
+      justify-content: center;
+    }
   }
 
   &__separator {

@@ -16,16 +16,32 @@
 
   &__lists {
     @include flex($direction: column, $gap: $gap-medium);
+
+    @include media-up(laptop) {
+      flex-direction: row;
+      gap: $gap-large;
+    }
   }
 
   &__list {
     @include flex($justify: center);
 
     width: 100%;
+
+    @include media-up(laptop) {
+      max-width: max-content;
+      flex-direction: column;
+      align-self: flex-start;
+    }
   }
 
   &__content-list {
     padding: 0 2rem;
+
+    @include media-up(laptop) {
+      max-width: 65rem;
+      padding: 0;
+    }
   }
 }
 
@@ -34,8 +50,18 @@
   padding: 0 1.5rem 1rem;
   cursor: pointer;
 
+  @include media-up(laptop) {
+    border-bottom: 0;
+    border-left: 0.3rem solid $color-accent;
+    padding: 3rem 0 3rem 1.5rem;
+  }
+
   &--selected {
     border-bottom-color: $color-main;
+
+    @include media-up(laptop) {
+      border-left-color: $color-main;
+    }
   }
 }
 
@@ -48,6 +74,13 @@
 
   &__list {
     @include flex($direction: column, $gap: $gap-medium);
+
+    @include media-up(laptop) {
+      &:not(.tab-content__list--bullet-point) {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+      }
+    }
 
     &--bullet-point {
       list-style: disc;
