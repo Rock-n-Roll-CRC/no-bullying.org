@@ -6,4 +6,34 @@
   @include colors($color-grey, $color-main);
 
   height: 5rem;
+
+  @include media-up(laptop) {
+    height: 8rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 0 5rem;
+  }
+
+  &__description {
+    display: none;
+
+    @include media-up(laptop) {
+      display: block;
+    }
+  }
+
+  &__website-logo {
+    display: none;
+
+    @include media-up(laptop) {
+      display: flex;
+      justify-self: center;
+    }
+  }
+
+  &__copyright {
+    @include media-up(laptop) {
+      justify-self: right;
+    }
+  }
 }

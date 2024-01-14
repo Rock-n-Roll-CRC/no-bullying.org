@@ -30,7 +30,7 @@
 
   &__cta {
     @include colors($color-grey, $color-main);
-    @include font($size: $fs-extra-large, $weight: $fw-semi-bold);
+    @include font($size: $fs-large, $weight: $fw-semi-bold);
 
     border-radius: $br-maximum;
     padding: 1.7rem 3rem;

@@ -60,6 +60,7 @@ if (tabs !== null && tabContents !== null) {
 
 // Carousel
 const buttons = document.querySelectorAll(".carousel__button");
+const quoteButtons = document.querySelectorAll(".quote__button");
 const indicators = document.querySelectorAll(".carousel__indicator");
 
 if (buttons !== null && indicators !== null) {
@@ -68,6 +69,40 @@ if (buttons !== null && indicators !== null) {
       const offset = button.classList.contains("carousel__button-back")
         ? -1
         : 1;
+      const quotes = button
+        .closest(".carousel")
+        ?.querySelector(".carousel__list");
+
+      if (quotes !== null && quotes !== undefined) {
+        const selectedQuote = quotes.querySelector(".quote--selected");
+        const selectedIndicator = document.querySelector(
+          ".carousel__indicator--selected"
+        );
+
+        if (selectedQuote !== null) {
+          let newIndex = [...quotes.children].indexOf(selectedQuote) + offset;
+
+          if (newIndex < 0) newIndex = quotes.children.length - 1;
+          if (newIndex >= quotes.children.length) newIndex = 0;
+
+          quotes.children[newIndex].classList.add("quote--selected");
+          selectedQuote.classList.remove("quote--selected");
+
+          if (selectedIndicator !== null) {
+            selectedIndicator.classList.remove("carousel__indicator--selected");
+            indicators[newIndex].classList.add("carousel__indicator--selected");
+
+            selectedIndicator.textContent = "\u25CB";
+            indicators[newIndex].textContent = "\u25CF";
+          }
+        }
+      }
+    });
+  });
+
+  quoteButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const offset = button.classList.contains("quote__button-back") ? -1 : 1;
       const quotes = button
         .closest(".carousel")
         ?.querySelector(".carousel__list");

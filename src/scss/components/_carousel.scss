@@ -7,6 +7,10 @@
 
   padding: 7.1rem 0;
 
+  @include media-up(laptop) {
+    padding: 17.5rem 0 10.4rem;
+  }
+
   &__list {
     @include media-up(tablet) {
       display: flex;
@@ -16,6 +20,10 @@
 
   &__buttons {
     @include flex($justify: center, $gap: $gap-large);
+
+    @include media-up(laptop) {
+      display: none;
+    }
   }
 
   &__button {
@@ -40,10 +48,59 @@
   display: none;
   padding: 0 2rem;
 
-  &--selected {
-    @include flex($direction: column, $gap: $gap-small);
+  @include media-up(laptop) {
+    @include dimensions(95rem, 22rem);
+    @include colors($color-main, $color-accent);
 
-    max-width: 50rem;
+    position: relative;
+    border-radius: 0.5rem;
+    padding: 5rem;
+  }
+
+  &--selected {
+    @include flex($direction: column, $justify: center, $gap: $gap-small);
+  }
+
+  &__button {
+    display: none;
+
+    @include media-up(laptop) {
+      @include dimensions(4.5rem, 4.5rem);
+      @include position($position: absolute, $top: 50%);
+      @include colors($color-accent, $color-grey);
+      @include font($size: $fs-extra-large, $weight: $fw-bold);
+
+      display: block;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+
+    &-back {
+      @include media-up(laptop) {
+        left: 0;
+        transform: translate(-50%, -50%);
+      }
+    }
+
+    &-next {
+      @include media-up(laptop) {
+        right: 0;
+        transform: translate(50%, -50%);
+      }
+    }
+  }
+
+  &__image {
+    display: none;
+
+    @include media-up(laptop) {
+      @include dimensions(29.998rem, 38.28rem);
+      @include position($position: absolute, $left: 5rem, $top: 50%);
+
+      display: block;
+      border-radius: 1rem;
+      transform: translateY(-50%);
+    }
   }
 
   &__left-mark {
@@ -58,6 +115,13 @@
 
     display: inline;
     vertical-align: middle;
+  }
+
+  &__text-content {
+    @include flex($direction: column, $gap: $gap-small);
+
+    align-self: flex-end;
+    max-width: 50rem;
   }
 
   &__text {

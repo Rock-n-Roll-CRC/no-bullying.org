@@ -28,6 +28,10 @@
 
   &__list {
     @include flex($direction: column, $align: center, $gap: $gap-medium);
+
+    @include media-up(laptop) {
+      @include flex($direction: row, $justify: center);
+    }
   }
 }
 
@@ -35,16 +39,15 @@
   @include flex($direction: column, $gap: $gap-medium);
   @include dimensions($width: 30rem);
 
-  color: $color-grey;
   border-radius: $br-large;
   padding: 2.5rem;
 
   &--color-main {
-    background-color: $color-main;
+    @include colors($color-grey, $color-main);
   }
 
-  &--color-accent {
-    background-color: $color-accent;
+  &--color-grey {
+    @include colors($color-main, $color-grey);
   }
 
   &__icon {
@@ -60,6 +63,6 @@
   }
 
   &__description {
-    font-size: $fs-small;
+    @include font($size: $fs-medium, $weight: $fw-medium);
   }
 }
