@@ -50,7 +50,7 @@
 
   @include media-up(laptop) {
     @include dimensions(95rem, 22rem);
-    @include colors($color-main, $color-accent);
+    @include colors($color-main, $color-grey);
 
     position: relative;
     border-radius: 0.5rem;
@@ -67,7 +67,7 @@
     @include media-up(laptop) {
       @include dimensions(4.5rem, 4.5rem);
       @include position($position: absolute, $top: 50%);
-      @include colors($color-accent, $color-grey);
+      @include colors($color-grey, $color-accent);
       @include font($size: $fs-extra-large, $weight: $fw-bold);
 
       display: block;
@@ -94,9 +94,9 @@
     display: none;
 
     @include media-up(laptop) {
-      @include dimensions(29.998rem, 38.28rem);
       @include position($position: absolute, $left: 5rem, $top: 50%);
 
+      height: 38.28rem;
       display: block;
       border-radius: 1rem;
       transform: translateY(-50%);

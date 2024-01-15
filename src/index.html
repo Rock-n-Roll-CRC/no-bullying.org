@@ -50,6 +50,18 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@400;700&display=swap"
       rel="stylesheet"
     />
+
+    <!-- Preload Images -->
+    <link
+      rel="preload"
+      as="image"
+      href="./assets/images/hero/mobile-hero.webp"
+    />
+    <link
+      rel="preload"
+      as="image"
+      href="./assets/images/hero/desktop-hero.webp"
+    />
   </head>
 
   <body>
@@ -108,6 +120,21 @@
     <main>
       <!-- Hero -->
       <section class="hero">
+        <picture>
+          <source
+            type="image/webp"
+            media="(min-width:1024px)"
+            srcset="./assets/images/hero/desktop-hero.webp"
+          />
+
+          <img
+            src="./assets/images/hero/mobile-hero.webp"
+            alt=""
+            class="hero__image"
+            decoding="async"
+          />
+        </picture>
+
         <h2 class="hero__heading">
           You want to stop bullying,
           <br />

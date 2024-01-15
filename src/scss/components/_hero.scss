@@ -5,10 +5,18 @@
   @include flex($direction: column, $align: center, $gap: $gap-medium);
 
   height: 56.8rem;
+  position: relative;
   color: $color-grey;
   text-align: center;
-  background: no-repeat center/cover url("../assets/images/hero.webp");
   padding-top: 11rem;
+
+  &__image {
+    @include dimensions(100%, 100%);
+    @include position($position: absolute, $top: 0, $left: 0);
+
+    object-fit: cover;
+    z-index: -999;
+  }
 
   &__heading {
     @include font($size: $fs-large, $family: $ff-serif);
