@@ -52,16 +52,7 @@
     />
 
     <!-- Preload Images -->
-    <link
-      rel="preload"
-      as="image"
-      href="./assets/images/hero/mobile-hero.webp"
-    />
-    <link
-      rel="preload"
-      as="image"
-      href="./assets/images/hero/desktop-hero.webp"
-    />
+    <link rel="preload" as="image" href="./assets/images/hero.webp" />
   </head>
 
   <body>
@@ -120,20 +111,12 @@
     <main>
       <!-- Hero -->
       <section class="hero">
-        <picture>
-          <source
-            type="image/webp"
-            media="(min-width:1024px)"
-            srcset="./assets/images/hero/desktop-hero.webp"
-          />
-
-          <img
-            src="./assets/images/hero/mobile-hero.webp"
-            alt=""
-            class="hero__image"
-            decoding="async"
-          />
-        </picture>
+        <img
+          src="./assets/images/hero.webp"
+          alt=""
+          class="hero__image"
+          decoding="async"
+        />
 
         <h2 class="hero__heading">
           You want to stop bullying,

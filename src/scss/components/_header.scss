@@ -6,6 +6,7 @@
   @include flex($align: center, $justify: space-around);
 
   padding: 1.5rem 0;
+  z-index: 999;
 
   &--fixed {
     position: fixed;

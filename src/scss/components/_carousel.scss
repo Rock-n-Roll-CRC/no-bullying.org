@@ -120,8 +120,12 @@
   &__text-content {
     @include flex($direction: column, $gap: $gap-small);
 
-    align-self: flex-end;
+    align-self: center;
     max-width: 50rem;
+
+    @include media-up(laptop) {
+      align-self: flex-end;
+    }
   }
 
   &__text {

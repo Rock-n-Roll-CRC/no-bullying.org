@@ -38,6 +38,10 @@
   &__content-list {
     padding: 0 2rem;
 
+    @include media-up(mobile-l) {
+      max-width: 65rem;
+    }
+
     @include media-up(laptop) {
       max-width: 65rem;
       padding: 0;

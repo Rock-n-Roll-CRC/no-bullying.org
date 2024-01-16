@@ -13,19 +13,23 @@ html {
   }
 
   @include media-up(mobile-m) {
-    font-size: calc(55% + 0.4vw);
+    font-size: calc(50% + 0.2vw);
   }
 
   @include media-up(mobile-l) {
-    font-size: calc(55% + 0.6vw);
+    font-size: calc(45% + 0.2vw);
   }
 
   @include media-up(tablet) {
-    font-size: calc(55% + 0.4vw);
+    font-size: calc(40% + 0.2vw);
   }
 
   @include media-up(laptop) {
-    font-size: 55%;
+    font-size: calc(35% + 0.2vw);
+  }
+
+  @include media-up(laptop-l) {
+    font-size: calc(40% + 0.2vw);
   }
 }
 

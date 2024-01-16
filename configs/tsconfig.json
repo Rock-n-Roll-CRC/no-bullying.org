@@ -2,10 +2,10 @@
   "compilerOptions": {
     "target": "es2022",
     "module": "ESNext",
-    "rootDir": "./src",
+    "rootDir": "./src/ts",
     "moduleResolution": "node",
     "resolveJsonModule": true,
-    "outDir": "./public",
+    "outDir": "./public/js",
     "newLine": "lf",
     "noEmitOnError": true,
     "esModuleInterop": true,
