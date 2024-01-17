@@ -35,5 +35,14 @@
     border-radius: $br-maximum;
     padding: 1.25rem 2.5rem;
     cursor: pointer;
+    transition: all 0.15s;
+
+    &:hover {
+      @include colors($color-grey, $color-main);
+    }
+
+    &:active {
+      opacity: 0.8;
+    }
   }
 }

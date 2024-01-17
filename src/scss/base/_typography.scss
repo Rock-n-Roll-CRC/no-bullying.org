@@ -12,14 +12,6 @@ html {
     display: none;
   }
 
-  @include media-up(mobile-m) {
-    font-size: calc(50% + 0.2vw);
-  }
-
-  @include media-up(mobile-l) {
-    font-size: calc(45% + 0.2vw);
-  }
-
   @include media-up(tablet) {
     font-size: calc(40% + 0.2vw);
   }
