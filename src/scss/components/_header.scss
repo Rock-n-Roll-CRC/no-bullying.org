@@ -28,27 +28,44 @@
   }
 }
 
-.hamburger-menu,
-.close-menu {
-  @include dimensions(3rem, 3rem);
-
-  cursor: pointer;
-}
-
 .hamburger-menu {
-  color: $color-grey;
+  background-color: transparent;
+  z-index: 999;
 
-  &--hidden {
-    display: none;
+  &__icon {
+    @include dimensions(3rem, 3rem);
+
+    color: $color-grey;
+    cursor: pointer;
   }
-}
 
-.close-menu {
-  display: none;
-  color: $color-main;
+  &__line {
+    transition: y 300ms ease-in 300ms, rotate 300ms ease-in, opacity 0ms 300ms;
+    transform-origin: center;
+  }
 
-  &--visible {
-    display: block;
-    z-index: 999;
+  &[aria-expanded="true"] &__icon {
+    color: $color-main;
+  }
+
+  &[aria-expanded="true"] &__line {
+    transition: y 300ms ease-in, rotate 300ms ease-in 300ms, opacity 0ms 300ms;
+  }
+
+  &[aria-expanded="true"] &__line-top,
+  &[aria-expanded="true"] &__line-bottom {
+    y: 45;
+  }
+
+  &[aria-expanded="true"] &__line-top {
+    rotate: 45deg;
+  }
+
+  &[aria-expanded="true"] &__line-middle {
+    opacity: 0;
+  }
+
+  &[aria-expanded="true"] &__line-bottom {
+    rotate: -45deg;
   }
 }

@@ -1,36 +1,36 @@
 // Navigation Menu
 const header = document.querySelector(".header");
 const hamburgerMenu = document.querySelector(".hamburger-menu");
-const closeMenu = document.querySelector(".close-menu");
 const navigationMenu = document.querySelector(".navigation-menu");
 const navigationMenuLink = document.querySelectorAll(".navigation-menu__link");
 
 if (
   header !== null &&
   hamburgerMenu !== null &&
-  closeMenu !== null &&
   navigationMenu !== null &&
   navigationMenuLink !== null
 ) {
   hamburgerMenu.addEventListener("click", () => {
-    hamburgerMenu.classList.add("hamburger-menu--hidden");
-    header.classList.add("header--fixed");
-    closeMenu.classList.add("close-menu--visible");
-    navigationMenu.classList.add("navigation-menu--visible");
-  });
+    const currentState = hamburgerMenu.getAttribute("data-state");
 
-  closeMenu.addEventListener("click", () => {
-    closeMenu.classList.remove("close-menu--visible");
-    header.classList.remove("header--fixed");
-    hamburgerMenu.classList.remove("hamburger-menu--hidden");
-    navigationMenu.classList.remove("navigation-menu--visible");
+    if (currentState == null || currentState === "closed") {
+      hamburgerMenu.setAttribute("data-state", "opened");
+      hamburgerMenu.setAttribute("aria-expanded", "true");
+      header.classList.add("header--fixed");
+      navigationMenu.classList.add("navigation-menu--visible");
+    } else {
+      hamburgerMenu.setAttribute("data-state", "closed");
+      hamburgerMenu.setAttribute("aria-expanded", "false");
+      header.classList.remove("header--fixed");
+      navigationMenu.classList.remove("navigation-menu--visible");
+    }
   });
 
   navigationMenuLink.forEach((link) => {
     link.addEventListener("click", () => {
-      closeMenu.classList.remove("close-menu--visible");
+      hamburgerMenu.setAttribute("data-state", "closed");
+      hamburgerMenu.setAttribute("aria-expanded", "false");
       header.classList.remove("header--fixed");
-      hamburgerMenu.classList.remove("hamburger-menu--hidden");
       navigationMenu.classList.remove("navigation-menu--visible");
     });
   });

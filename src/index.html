@@ -68,17 +68,48 @@
       </div>
 
       <!-- Hamburger Menu -->
-      <svg class="header__hamburger-menu hamburger-menu">
-        <use href="./assets/icons/header.svg#hamburger-menu" />
-      </svg>
-
-      <!-- Close Menu -->
-      <svg class="header__close-menu close-menu">
-        <use href="./assets/icons/header.svg#close-menu" />
-      </svg>
+      <button
+        class="header__hamburger-menu hamburger-menu"
+        aria-controls="primary-navigation"
+        aria-expanded="false"
+      >
+        <svg
+          fill="currentColor"
+          class="hamburger-menu__icon"
+          viewBox="0 0 100 100"
+        >
+          <rect
+            class="hamburger-menu__line hamburger-menu__line-top"
+            width="80"
+            height="10"
+            x="10"
+            y="25"
+            rx="5"
+          ></rect>
+          <rect
+            class="hamburger-menu__line hamburger-menu__line-middle"
+            width="80"
+            height="10"
+            x="10"
+            y="45"
+            rx="5"
+          ></rect>
+          <rect
+            class="hamburger-menu__line hamburger-menu__line-bottom"
+            width="80"
+            height="10"
+            x="10"
+            y="65"
+            rx="5"
+          ></rect>
+        </svg>
+      </button>
 
       <!-- Navigataion Menu -->
-      <nav class="header__navigation-menu navigation-menu">
+      <nav
+        class="header__navigation-menu navigation-menu"
+        id="primary-navigation"
+      >
         <ul class="navigation-menu__list">
           <li class="navigation-menu__list-item">
             <a href="#steps" class="navigation-menu__link">How it works</a>
