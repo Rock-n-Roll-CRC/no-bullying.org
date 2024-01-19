@@ -37,6 +37,7 @@
 
     color: $color-grey;
     cursor: pointer;
+    transition: color 0.5s;
   }
 
   &__line {
@@ -54,7 +55,7 @@
 
   &[aria-expanded="true"] &__line-top,
   &[aria-expanded="true"] &__line-bottom {
-    y: 45;
+    y: 47.5;
   }
 
   &[aria-expanded="true"] &__line-top {
