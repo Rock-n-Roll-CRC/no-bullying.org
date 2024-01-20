@@ -27,7 +27,25 @@
       $family: $ff-serif
     );
 
+    position: relative;
     color: $color-main;
+    padding: 0 1.5rem;
+
+    &::after {
+      @include position($position: absolute, $bottom: -1rem, $left: 50%);
+
+      content: "";
+      display: block;
+      width: 0;
+      height: 2px;
+      background: $color-accent;
+      transition: width 0.3s ease, left 0.3s ease;
+    }
+
+    &:hover::after {
+      width: 100%;
+      left: 0;
+    }
   }
 
   &__cta {
