@@ -1,0 +1,74 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.quiz {
+  height: 56.8rem;
+  position: relative;
+  color: $color-grey;
+  text-align: center;
+  padding-top: 11rem;
+
+  &__image {
+    @include dimensions(100%, 100%);
+    @include position($position: absolute, $top: 0, $left: 0);
+
+    object-fit: cover;
+    z-index: -999;
+  }
+}
+
+.question {
+  @include flex($direction: column, $align: center, $gap: $gap-large);
+
+  &__heading-box {
+    display: flex;
+    flex-direction: column;
+    gap: $gap-small;
+  }
+
+  &__label {
+    @include font($size: $fs-extra-small, $weight: $fw-bold);
+
+    letter-spacing: $ls-large;
+    text-transform: uppercase;
+  }
+
+  &__heading {
+    @include font($size: $fs-large, $weight: $fw-semi-bold, $family: $ff-serif);
+
+    letter-spacing: $ls-small;
+  }
+
+  &__button-box {
+    display: flex;
+    flex-direction: column;
+    gap: $gap-medium;
+    width: 30rem;
+  }
+
+  &__answers-box {
+    display: flex;
+    flex-direction: column;
+    gap: $gap-small;
+  }
+
+  &__answer-button {
+    flex: 1;
+
+    @include colors($color-main, $color-grey);
+    @include font($size: $fs-medium, $weight: $fw-semi-bold);
+
+    border-radius: $br-maximum;
+    padding: 1rem 5rem;
+    cursor: pointer;
+  }
+
+  &__next-button {
+    @include colors($color-grey, $color-main);
+    @include font($size: $fs-medium, $weight: $fw-semi-bold);
+
+    border-radius: $br-maximum;
+    padding: 1rem 5rem;
+    cursor: pointer;
+  }
+}
