@@ -15,15 +15,31 @@
     object-fit: cover;
     z-index: -999;
   }
+
+  &__question-list {
+    margin-bottom: $gap-medium;
+  }
+
+  &__next-button {
+    @include colors($color-grey, $color-main);
+    @include font($size: $fs-medium, $weight: $fw-semi-bold);
+
+    width: 30rem;
+    border-radius: $br-maximum;
+    padding: 1.5rem 2rem;
+    cursor: pointer;
+  }
 }
 
 .question {
-  @include flex($direction: column, $align: center, $gap: $gap-large);
+  display: none;
+
+  &--visible {
+    @include flex($direction: column, $align: center, $gap: $gap-large);
+  }
 
   &__heading-box {
-    display: flex;
-    flex-direction: column;
-    gap: $gap-small;
+    @include flex($direction: column, $gap: $gap-small);
   }
 
   &__label {
@@ -39,36 +55,24 @@
     letter-spacing: $ls-small;
   }
 
-  &__button-box {
-    display: flex;
-    flex-direction: column;
-    gap: $gap-medium;
+  &__answers-list {
+    @include flex($direction: column, $gap: $gap-small);
+
     width: 30rem;
   }
+}
 
-  &__answers-box {
-    display: flex;
-    flex-direction: column;
-    gap: $gap-small;
-  }
+.answer {
+  display: flex;
 
-  &__answer-button {
+  &__button {
     flex: 1;
 
     @include colors($color-main, $color-grey);
     @include font($size: $fs-medium, $weight: $fw-semi-bold);
 
     border-radius: $br-maximum;
-    padding: 1rem 5rem;
-    cursor: pointer;
-  }
-
-  &__next-button {
-    @include colors($color-grey, $color-main);
-    @include font($size: $fs-medium, $weight: $fw-semi-bold);
-
-    border-radius: $br-maximum;
-    padding: 1rem 5rem;
+    padding: 1.5rem 2rem;
     cursor: pointer;
   }
 }
