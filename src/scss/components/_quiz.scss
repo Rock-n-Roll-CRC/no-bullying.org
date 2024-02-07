@@ -2,11 +2,12 @@
 @use "../abstracts/mixins" as *;
 
 .quiz {
-  height: 56.8rem;
+  min-height: 90vh;
   position: relative;
   color: $color-grey;
   text-align: center;
   padding-top: 11rem;
+  padding-bottom: 5rem;
 
   &__image {
     @include dimensions(100%, 100%);
@@ -34,7 +35,7 @@
 .question {
   display: none;
 
-  &--visible {
+  &--selected {
     @include flex($direction: column, $align: center, $gap: $gap-large);
   }
 
@@ -74,5 +75,9 @@
     border-radius: $br-maximum;
     padding: 1.5rem 2rem;
     cursor: pointer;
+
+    &--selected {
+      @include colors($color-grey, $color-main);
+    }
   }
 }

@@ -134,3 +134,26 @@ if (buttons !== null && indicators !== null) {
     });
   });
 }
+
+// Quiz
+const answers = document.querySelectorAll(".answer__button");
+const nextButton = document.querySelector(".quiz__next-button");
+
+answers.forEach((answer) => {
+  answer.addEventListener("click", () => {
+    const selectedAnswer = document.querySelector(".answer__button--selected");
+
+    selectedAnswer?.classList.remove("answer__button--selected");
+    answer.classList.add("answer__button--selected");
+  });
+});
+
+nextButton?.addEventListener("click", () => {
+  const selectedQuestion = document.querySelector(".question--selected");
+  const nextQuestion = document.querySelector(
+    ".question--selected + .question"
+  );
+
+  selectedQuestion?.classList.remove("question--selected");
+  nextQuestion?.classList.add("question--selected");
+});
