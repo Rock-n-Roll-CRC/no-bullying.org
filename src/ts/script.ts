@@ -154,6 +154,19 @@ nextButton?.addEventListener("click", () => {
     ".question--selected + .question"
   );
 
+  const lis = [
+    ...document.querySelectorAll(
+      ".question__answers-list:has(.answer__button--selected) .answer"
+    ),
+  ];
+
+  lis.forEach((li) => {
+    const index = lis.indexOf(li) + 1;
+
+    if (li.matches(".answer:has(> .answer__button--selected)")) {
+      console.log(index);
+    }
+  });
   selectedQuestion?.classList.remove("question--selected");
   nextQuestion?.classList.add("question--selected");
 });
