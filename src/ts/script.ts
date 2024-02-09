@@ -138,6 +138,7 @@ if (buttons !== null && indicators !== null) {
 // Quiz
 const answers = document.querySelectorAll(".answer__button");
 const nextButton = document.querySelector(".quiz__next-button");
+const answersArray: Array<number | null> = [];
 
 answers.forEach((answer) => {
   answer.addEventListener("click", () => {
@@ -150,23 +151,28 @@ answers.forEach((answer) => {
 
 nextButton?.addEventListener("click", () => {
   const selectedQuestion = document.querySelector(".question--selected");
+  const selectedAnswer = document.querySelector(".answer__button--selected");
   const nextQuestion = document.querySelector(
     ".question--selected + .question"
   );
 
   const lis = [
     ...document.querySelectorAll(
-      ".question__answers-list:has(.answer__button--selected) .answer"
+      ".question--selected > .question__answers-list .answer"
     ),
   ];
 
   lis.forEach((li) => {
-    const index = lis.indexOf(li) + 1;
+    const selectedAnswerIndex = lis.indexOf(li) + 1;
 
     if (li.matches(".answer:has(> .answer__button--selected)")) {
-      console.log(index);
+      answersArray.push(selectedAnswerIndex);
+      selectedQuestion?.classList.remove("question--selected");
+      nextQuestion?.classList.add("question--selected");
     }
   });
-  selectedQuestion?.classList.remove("question--selected");
-  nextQuestion?.classList.add("question--selected");
+
+  console.log(answersArray);
+
+  selectedAnswer?.classList.remove("answer__button--selected");
 });
