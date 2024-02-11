@@ -22,6 +22,8 @@
   }
 
   &__next-button {
+    display: none;
+
     @include colors($color-grey, $color-main);
     @include font($size: $fs-medium, $weight: $fw-semi-bold);
 
@@ -36,7 +38,7 @@
   display: none;
 
   &--selected {
-    @include flex($direction: column, $align: center, $gap: $gap-large);
+    // @include flex($direction: column, $align: center, $gap: $gap-large);
   }
 
   &__heading-box {
@@ -78,6 +80,50 @@
 
     &--selected {
       @include colors($color-grey, $color-main);
+    }
+  }
+}
+
+.results {
+  @include flex(column, center, center, $gap-medium);
+
+  &__heading {
+    @include font($size: $fs-large, $weight: $fw-semi-bold, $family: $ff-serif);
+
+    letter-spacing: $ls-small;
+  }
+
+  &__list {
+    @include flex(column, center, center, $gap-medium);
+  }
+
+  &__list-item {
+    @include flex($align: center, $justify: center, $gap: $gap-small);
+  }
+}
+
+.role {
+  &__heading {
+    width: 10rem;
+    text-align: center;
+    background-color: $color-main;
+    border-radius: $br-small;
+    padding: 0.25rem;
+  }
+
+  &__score-blocks {
+    @include flex($align: center, $justify: center);
+  }
+
+  &__score-block {
+    width: 1.5rem;
+    height: 3rem;
+    background-color: $color-overlay;
+    border: 0.01rem solid $color-grey;
+    border-left: 0;
+
+    &:first-child {
+      border-left: 0.01rem solid $color-grey;
     }
   }
 }
