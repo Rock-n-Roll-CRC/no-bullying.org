@@ -22,8 +22,6 @@
   }
 
   &__next-button {
-    display: none;
-
     @include colors($color-grey, $color-main);
     @include font($size: $fs-medium, $weight: $fw-semi-bold);
 
@@ -38,7 +36,7 @@
   display: none;
 
   &--selected {
-    // @include flex($direction: column, $align: center, $gap: $gap-large);
+    @include flex($direction: column, $align: center, $gap: $gap-large);
   }
 
   &__heading-box {
@@ -85,7 +83,9 @@
 }
 
 .results {
-  @include flex(column, center, center, $gap-medium);
+  display: none;
+
+  // @include flex(column, center, center, $gap-medium);
 
   &__heading {
     @include font($size: $fs-large, $weight: $fw-semi-bold, $family: $ff-serif);

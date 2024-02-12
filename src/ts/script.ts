@@ -139,6 +139,34 @@ if (buttons !== null && indicators !== null) {
 const answers = document.querySelectorAll(".answer__button");
 const nextButton = document.querySelector(".quiz__next-button");
 const answersArray: Array<number | null> = [];
+const initiatorAnswers = [
+  999, 1, 4, 4, 3, 3, 1, 2, 4, 2, 2, 1, 1, 999, 2, 4, 2, 999, 2, 2, 999, 1, 4,
+  1, 3, 3,
+];
+const helperAnswers = [
+  999, 2, 1, 4, 4, 2, 2, 3, 3, 3, 4, 3, 4, 999, 2, 1, 3, 999, 3, 1, 999, 2, 1,
+  3, 1, 4,
+];
+const defenderAnswers = [
+  999, 1, 2, 2, 3, 1, 4, 2, 2, 1, 2, 1, 3, 999, 3, 2, 1, 999, 4, 2, 999, 1, 3,
+  2, 2, 2,
+];
+const victimAnswers = [
+  999, 2, 3, 1, 2, 1, 4, 1, 4, 3, 3, 2, 3, 999, 4, 3, 4, 999, 1, 4, 999, 4, 3,
+  4, 4, 3,
+];
+const observerAnswers = [
+  999, 4, 2, 3, 3, 4, 4, 3, 1, 4, 1, 2, 2, 999, 1, 4, 3, 999, 2, 3, 999, 3, 4,
+  1, 2, 1,
+];
+
+let initiatorScore = 0;
+let helperScore = 0;
+let defenderScore = 0;
+let victimScore = 0;
+let observerScore = 0;
+let classmateViolance = 0;
+let teacherViolance = 0;
 
 answers.forEach((answer) => {
   answer.addEventListener("click", () => {
@@ -167,12 +195,53 @@ nextButton?.addEventListener("click", () => {
 
     if (li.matches(".answer:has(> .answer__button--selected)")) {
       answersArray.push(selectedAnswerIndex);
+
+      if (selectedAnswerIndex === initiatorAnswers[answersArray.length - 1]) {
+        initiatorScore++;
+      }
+
+      if (selectedAnswerIndex === helperAnswers[answersArray.length - 1]) {
+        helperScore++;
+      }
+
+      if (selectedAnswerIndex === defenderAnswers[answersArray.length - 1]) {
+        defenderScore++;
+      }
+
+      if (selectedAnswerIndex === victimAnswers[answersArray.length - 1]) {
+        victimScore++;
+      }
+
+      if (selectedAnswerIndex === observerAnswers[answersArray.length - 1]) {
+        observerScore++;
+      }
+
+      if (answersArray.length - 1 === 13) {
+        if (
+          selectedAnswerIndex === 1 ||
+          selectedAnswerIndex === 3 ||
+          selectedAnswerIndex === 4
+        ) {
+          classmateViolance++;
+        }
+      }
+
+      if (answersArray.length - 1 === 17) {
+        if (selectedAnswerIndex === 1 || selectedAnswerIndex === 4) {
+          classmateViolance++;
+        }
+      }
+
+      if (answersArray.length - 1 === 20) {
+        if (selectedAnswerIndex === 1 || selectedAnswerIndex === 4) {
+          teacherViolance++;
+        }
+      }
+
       selectedQuestion?.classList.remove("question--selected");
       nextQuestion?.classList.add("question--selected");
     }
   });
-
-  console.log(answersArray);
 
   selectedAnswer?.classList.remove("answer__button--selected");
 });
