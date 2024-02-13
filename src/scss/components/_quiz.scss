@@ -29,6 +29,10 @@
     border-radius: $br-maximum;
     padding: 1.5rem 2rem;
     cursor: pointer;
+
+    &--hidden {
+      display: none;
+    }
   }
 }
 
@@ -85,7 +89,9 @@
 .results {
   display: none;
 
-  // @include flex(column, center, center, $gap-medium);
+  &--visible {
+    @include flex(column, center, center, $gap-medium);
+  }
 
   &__heading {
     @include font($size: $fs-large, $weight: $fw-semi-bold, $family: $ff-serif);
@@ -124,6 +130,10 @@
 
     &:first-child {
       border-left: 0.01rem solid $color-grey;
+    }
+
+    &--marked {
+      background-color: $color-main;
     }
   }
 }

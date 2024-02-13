@@ -241,6 +241,39 @@ nextButton?.addEventListener("click", () => {
       selectedQuestion?.classList.remove("question--selected");
       nextQuestion?.classList.add("question--selected");
     }
+
+    const lastQuestion = document.querySelector(".question:last-child");
+    const resultsSection = document.querySelector(".results");
+    const initiatorBlocks = document.querySelectorAll(".initiator-score-block");
+    const helperBlocks = document.querySelectorAll(".helper-score-block");
+    const defenderBlocks = document.querySelectorAll(".defender-score-block");
+    const victimBlocks = document.querySelectorAll(".victim-score-block");
+    const observerBlocks = document.querySelectorAll(".observer-score-block");
+
+    if (selectedQuestion === lastQuestion) {
+      resultsSection?.classList.add("results--visible");
+      nextButton.classList.add("quiz__next-button--hidden");
+
+      for (let i = 0; i < initiatorScore; i++) {
+        initiatorBlocks[i].classList.add("role__score-block--marked");
+      }
+
+      for (let i = 0; i < helperScore; i++) {
+        helperBlocks[i].classList.add("role__score-block--marked");
+      }
+
+      for (let i = 0; i < defenderScore; i++) {
+        defenderBlocks[i].classList.add("role__score-block--marked");
+      }
+
+      for (let i = 0; i < victimScore; i++) {
+        victimBlocks[i].classList.add("role__score-block--marked");
+      }
+
+      for (let i = 0; i < observerScore; i++) {
+        observerBlocks[i].classList.add("role__score-block--marked");
+      }
+    }
   });
 
   selectedAnswer?.classList.remove("answer__button--selected");
