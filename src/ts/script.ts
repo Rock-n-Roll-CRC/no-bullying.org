@@ -165,8 +165,8 @@ let helperScore = 0;
 let defenderScore = 0;
 let victimScore = 0;
 let observerScore = 0;
-let classmateViolance = 0;
-let teacherViolance = 0;
+let studentViolanceScore = 0;
+let teacherViolanceScore = 0;
 
 answers.forEach((answer) => {
   answer.addEventListener("click", () => {
@@ -222,19 +222,19 @@ nextButton?.addEventListener("click", () => {
           selectedAnswerIndex === 3 ||
           selectedAnswerIndex === 4
         ) {
-          classmateViolance++;
+          studentViolanceScore++;
         }
       }
 
       if (answersArray.length - 1 === 17) {
         if (selectedAnswerIndex === 1 || selectedAnswerIndex === 4) {
-          classmateViolance++;
+          studentViolanceScore++;
         }
       }
 
       if (answersArray.length - 1 === 20) {
         if (selectedAnswerIndex === 1 || selectedAnswerIndex === 4) {
-          teacherViolance++;
+          teacherViolanceScore++;
         }
       }
 
@@ -249,6 +249,24 @@ nextButton?.addEventListener("click", () => {
     const defenderBlocks = document.querySelectorAll(".defender-score-block");
     const victimBlocks = document.querySelectorAll(".victim-score-block");
     const observerBlocks = document.querySelectorAll(".observer-score-block");
+    const initiatorResultScore = document.querySelector(".initiator-score");
+    const helperResultScore = document.querySelector(".helper-score");
+    const defenderResultScore = document.querySelector(".defender-score");
+    const victimResultScore = document.querySelector(".victim-score");
+    const observerResultScore = document.querySelector(".observer-score");
+    const studentsViolanceDescription = document.querySelector(
+      ".students-violance__description"
+    );
+    const studentsViolanceIcon = document.querySelector(
+      ".students-violance__icon"
+    );
+    const teachersViolanceDescription = document.querySelector(
+      ".teachers-violance__description"
+    );
+    const teachersViolanceIcon = document.querySelector(
+      ".teachers-violance__icon"
+    );
+    const violanceResults = document.querySelector(".results__violence-list");
 
     if (selectedQuestion === lastQuestion) {
       resultsSection?.classList.add("results--visible");
@@ -272,6 +290,51 @@ nextButton?.addEventListener("click", () => {
 
       for (let i = 0; i < observerScore; i++) {
         observerBlocks[i].classList.add("role__score-block--marked");
+      }
+
+      if (
+        initiatorResultScore !== null &&
+        helperResultScore !== null &&
+        defenderResultScore !== null &&
+        victimResultScore !== null &&
+        observerResultScore !== null
+      ) {
+        initiatorResultScore.textContent = String(initiatorScore);
+        helperResultScore.textContent = String(helperScore);
+        defenderResultScore.textContent = String(defenderScore);
+        victimResultScore.textContent = String(victimScore);
+        observerResultScore.textContent = String(observerScore);
+      }
+
+      if (
+        studentsViolanceDescription !== null &&
+        teachersViolanceDescription !== null
+      ) {
+        if (studentViolanceScore > 0) {
+          studentsViolanceDescription.textContent =
+            "Violance in class from students detected";
+        } else {
+          studentsViolanceIcon?.classList.add("violance-icon--hidden");
+        }
+
+        if (teacherViolanceScore > 0) {
+          teachersViolanceDescription.textContent =
+            "Violance in class from teachers detected";
+        } else {
+          teachersViolanceIcon?.classList.add("violance-icon--hidden");
+        }
+
+        if (studentViolanceScore === 0 && teacherViolanceScore === 0) {
+          if (violanceResults !== null) {
+            violanceResults.classList.add("results__violence-list--hidden");
+          }
+        }
+
+        if (studentViolanceScore === 0 || teacherViolanceScore === 0) {
+          if (violanceResults !== null) {
+            violanceResults.classList.add("results__violence-list--no-gap");
+          }
+        }
       }
     }
   });
