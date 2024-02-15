@@ -94,7 +94,7 @@
   }
 
   &__heading {
-    @include font($size: $fs-large, $weight: $fw-semi-bold, $family: $ff-serif);
+    @include font($size: $fs-large, $weight: $fw-bold, $family: $ff-serif);
 
     letter-spacing: $ls-small;
   }
@@ -130,9 +130,12 @@
 
 .role {
   &__heading {
+    @include font($size: $fs-medium, $weight: $fw-semi-bold);
+
     width: 10rem;
     text-align: center;
-    background-color: $color-main;
+    background-color: $color-grey;
+    color: $color-main;
     border-radius: $br-small;
     padding: 0.25rem;
   }
@@ -144,7 +147,7 @@
   &__score-block {
     width: 1.5rem;
     height: 3rem;
-    background-color: $color-overlay;
+    background-color: $color-grey;
     border: 0.01rem solid $color-grey;
     border-left: 0;
 
@@ -159,10 +162,12 @@
 
   &__score {
     @include flex($align: center, $justify: center);
+    @include font($size: $fs-medium, $weight: $fw-bold);
 
     width: 3.5rem;
     height: 3.5rem;
-    background-color: $color-accent;
+    background-color: $color-grey;
+    color: $color-main;
     border-radius: $br-maximum;
   }
 }
