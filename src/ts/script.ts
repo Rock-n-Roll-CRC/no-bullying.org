@@ -268,7 +268,7 @@ nextButton?.addEventListener("click", () => {
     );
     const violanceResults = document.querySelector(".results__violence-list");
 
-    if (selectedQuestion === lastQuestion) {
+    if (selectedQuestion === lastQuestion && selectedAnswer !== null) {
       resultsSection?.classList.add("results--visible");
       nextButton.classList.add("quiz__next-button--hidden");
 

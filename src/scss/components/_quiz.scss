@@ -15,6 +15,10 @@
 
     object-fit: cover;
     z-index: -999;
+
+    @include media-down(quiz-results) {
+      position: fixed;
+    }
   }
 
   &__question-list {
@@ -101,6 +105,10 @@
 
   &__main-container {
     @include flex($align: center, $gap: $gap-large);
+
+    @include media-down(laptop) {
+      flex-direction: column;
+    }
   }
 
   &__sub-container {
@@ -133,6 +141,10 @@
     &-item {
       @include flex($align: center, $gap: $gap-small);
     }
+
+    @include media-down(quiz-results) {
+      margin: 0 5rem;
+    }
   }
 
   &__tip-list {
@@ -141,6 +153,10 @@
     background-color: $color-main;
     border-radius: $br-medium;
     padding: 2rem 2.5rem;
+
+    @include media-down(quiz-results) {
+      margin: 0 5rem;
+    }
   }
 }
 
@@ -173,6 +189,10 @@
 
     &--marked {
       background-color: $color-main;
+    }
+
+    @include media-down(quiz-results) {
+      display: none;
     }
   }
 
