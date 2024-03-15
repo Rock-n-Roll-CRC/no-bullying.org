@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Meta Data -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="no-bullying.org is a haven for people who are being bullied and want to stop it. Our quiz will help you make your dream come true, giving you concrete steps to solving your problem."
+    />
+    <meta name="author" content="Danil_Dikhtyar" />
+
+    <!-- Webpage Title & Favicon Icons -->
+    <title>no-bullying.org</title>
+
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./assets/icons/favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/icons/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./assets/icons/favicon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="./assets/icons/favicon/site.webmanifest" />
+
+    <!-- Linking Styles -->
+    <link rel="stylesheet" href="./css/main.css" />
+
+    <!-- Linking Scripts -->
+    <script src="./js/script.js" defer></script>
+
+    <!-- Linking Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@400;700&display=swap"
+      rel="preload"
+      as="style"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Preload Images -->
+    <link rel="preload" as="image" href="./assets/images/hero.webp" />
+  </head>
+
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <!-- Website Logo -->
+      <a href="#top" class="header__website-logo website-logo">
+        <svg class="website-logo__icon">
+          <use href="./assets/icons/header.svg#website-logo" />
+        </svg>
+
+        <h1 class="website-logo__heading">no-bullying.org</h1>
+      </a>
+
+      <div class="header__menus-container">
+        <!-- Language Menu -->
+        <div class="header__language-menu language-menu">
+          <button class="language-menu__button">
+            <svg class="language-menu__icon">
+              <use href="./assets/icons/header.svg#language-menu" />
+            </svg>
+          </button>
+
+          <div class="language-menu__content">
+            <a href="./index.html" class="language-menu__link">english</a>
+
+            <a href="./ru/index.html" class="language-menu__link">russian</a>
+          </div>
+        </div>
+
+        <!-- Hamburger Menu -->
+        <button
+          class="header__hamburger-menu hamburger-menu"
+          aria-controls="primary-navigation"
+          aria-expanded="false"
+        >
+          <svg
+            fill="currentColor"
+            class="hamburger-menu__icon"
+            viewBox="0 0 100 100"
+          >
+            <rect
+              class="hamburger-menu__line hamburger-menu__line-top"
+              width="80"
+              height="5"
+              x="10"
+              y="25"
+              rx="5"
+            ></rect>
+            <rect
+              class="hamburger-menu__line hamburger-menu__line-middle"
+              width="80"
+              height="5"
+              x="10"
+              y="45"
+              rx="5"
+            ></rect>
+            <rect
+              class="hamburger-menu__line hamburger-menu__line-bottom"
+              width="80"
+              height="5"
+              x="10"
+              y="65"
+              rx="5"
+            ></rect>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Navigataion Menu -->
+      <nav
+        class="header__navigation-menu navigation-menu"
+        id="primary-navigation"
+      >
+        <ul class="navigation-menu__list">
+          <li class="navigation-menu__list-item">
+            <a href="#steps" class="navigation-menu__link">How it works</a>
+          </li>
+
+          <li class="navigation-menu__list-item">
+            <a href="#statistics" class="navigation-menu__link">Statistics</a>
+          </li>
+
+          <li class="navigation-menu__list-item">
+            <a href="#tabs" class="navigation-menu__link">What is bullying?</a>
+          </li>
+
+          <li class="navigation-menu__list-item">
+            <a href="#carousel" class="navigation-menu__link">Motivation</a>
+          </li>
+
+          <li class="navigation-menu__list-item">
+            <a href="#contacts" class="navigation-menu__link">Contacts</a>
+          </li>
+
+          <li class="navigation-menu__list-item">
+            <a href="./en/quiz.html" class="navigation-menu__cta">
+              Take the quiz
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Main -->
+    <main>
+      <!-- Hero -->
+      <section class="hero">
+        <img
+          src="./assets/images/hero.webp"
+          alt=""
+          class="hero__image"
+          decoding="async"
+        />
+
+        <h2 class="hero__heading">
+          You want to stop bullying,
+          <br />
+          we know what you need to do.
+          <br />
+          Let's work together.
+        </h2>
+
+        <p class="hero__description">
+          Find the right instructions to follow,
+          <br />
+          personalized just for you.
+        </p>
+
+        <a href="./en/quiz.html" class="hero__cta">Take the quiz</a>
+      </section>
+
+      <!-- Steps -->
+      <section class="steps" id="steps">
+        <h2 class="steps__heading">How it works</h2>
+
+        <ol class="steps__list">
+          <!-- Step 1 -->
+          <li class="steps__list-item step">
+            <article class="step__content">
+              <svg class="step__image">
+                <use href="./assets/illustrations/steps.svg#step-1" />
+              </svg>
+
+              <div class="step__text-content">
+                <h3 class="step__heading">Take the quiz</h3>
+
+                <p class="step__description">
+                  Tell us about the problem,
+                  <br />
+                  we're good listeners.
+                </p>
+              </div>
+            </article>
+
+            <svg class="step__separator">
+              <use href="./assets/illustrations/steps.svg#arrow-down" />
+            </svg>
+          </li>
+
+          <!-- Step 2 -->
+          <li class="steps__list-item step">
+            <article class="step__content">
+              <svg class="step__image">
+                <use href="./assets/illustrations/steps.svg#step-2" />
+              </svg>
+
+              <div class="step__text-content">
+                <h3 class="step__heading">Get the action plan</h3>
+
+                <p class="step__description">
+                  We know you're feeling lost.
+                  <br />
+                  We will guide you.
+                </p>
+              </div>
+            </article>
+
+            <svg class="step__separator">
+              <use href="./assets/illustrations/steps.svg#arrow-up" />
+            </svg>
+          </li>
+
+          <!-- Step 3 -->
+          <li class="steps__list-item step">
+            <article class="step__content">
+              <svg class="step__image">
+                <use href="./assets/illustrations/steps.svg#step-3" />
+              </svg>
+
+              <div class="step__text-content">
+                <h3 class="step__heading">Stick with it</h3>
+
+                <p class="step__description">
+                  Follow the guide and enjoy
+                  <br />
+                  life to the fullest!
+                </p>
+              </div>
+            </article>
+          </li>
+        </ol>
+
+        <hr class="steps__separator" />
+
+        <!-- Call To Action -->
+        <article class="steps__cta cta-block">
+          <p class="cta-block__heading">Let's get started</p>
+
+          <a href="./en/quiz.html" class="cta-block__button">Take the quiz</a>
+        </article>
+      </section>
+
+      <!-- Statistics -->
+      <section class="statistics" id="statistics">
+        <ul class="statistics__list">
+          <!-- Statistic 1 -->
+          <li class="statistics__list-item statistic">
+            <svg class="statistic__icon">
+              <use href="./assets/icons/statistics.svg#statistic-1" />
+            </svg>
+
+            <div class="statistic__text-content">
+              <p class="statistic__figure">20.2%</p>
+
+              <p class="statistic__description">
+                of surveyed students report
+                <br />
+                being bullied
+              </p>
+            </div>
+          </li>
+
+          <!-- Statistic 2 -->
+          <li class="statistics__list-item statistic">
+            <svg class="statistic__icon">
+              <use href="./assets/icons/statistics.svg#statistic-2" />
+            </svg>
+
+            <div class="statistic__text-content">
+              <p class="statistic__figure">46.0%</p>
+
+              <p class="statistic__description">
+                of bullyied students notified
+                <br />
+                an adult at school
+              </p>
+            </div>
+          </li>
+
+          <!-- Statistic 3 -->
+          <li class="statistics__list-item statistic">
+            <svg class="statistic__icon">
+              <use href="./assets/icons/statistics.svg#statistic-3" />
+            </svg>
+
+            <div class="statistic__text-content">
+              <p class="statistic__figure">41.0%</p>
+
+              <p class="statistic__description">
+                of bullied students think that
+                <br />
+                the bullying will not stop
+              </p>
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Tabs -->
+      <section class="tabs" id="tabs">
+        <h2 class="tabs__heading">What is bullying?</h2>
+
+        <div class="tabs__lists">
+          <ol class="tabs__list">
+            <!-- Tab 1 -->
+            <li class="tabs__list-item tab tab--selected">
+              <h3 class="tab__heading">Definition</h3>
+            </li>
+
+            <!-- Tab 2 -->
+            <li class="tabs__list-item tab">
+              <h3 class="tab__heading">Types</h3>
+            </li>
+
+            <!-- Tab 3 -->
+            <li class="tabs__list-item tab">
+              <h3 class="tab__heading">Consequences</h3>
+            </li>
+          </ol>
+
+          <ol class="tabs__content-list">
+            <!-- Tab Content 1 -->
+            <li
+              class="tabs__content-list-item tab-content tab-content--selected"
+            >
+              <p class="tab-content__description">
+                In 2014 the U.S. Department of Education and the Center for
+                Disease Control defined bullying as having these components:
+              </p>
+
+              <ul class="tab-content__list tab-content__list--bullet-point">
+                <li class="tab-content__list-item--bullet-point">
+                  <p>Aggressive behavior</p>
+                </li>
+
+                <li class="tab-content__list-item--bullet-point">
+                  <p>Power imbalance</p>
+                </li>
+
+                <li class="tab-content__list-item--bullet-point">
+                  <p>Repeated or likely to be repeated.</p>
+                </li>
+              </ul>
+
+              <p class="tab-content__description">
+                Middle schoolers are most likely to be bullied. Most bullying in
+                this age group is done in person. It involves name calling,
+                spreading rumors, teasing, hitting, pushing, threatening or
+                sexual comments. Sometimes kids are bullied online.
+              </p>
+
+              <p class="tab-content__description">
+                Bullying can have a lot of long-term consequences that may last
+                into adulthood.
+              </p>
+            </li>
+
+            <!-- Tab Content 2 -->
+            <li class="tabs__content-list-item tab-content">
+              <ul class="tab-content__list">
+                <!-- Type 1 -->
+                <li class="tab-content__list-item type">
+                  <h4 class="type__heading">Physical bullying</h4>
+
+                  <p class="type__description">
+                    Physical bullying is one of the most obvious and easily
+                    identifiable forms of bullying. It involves the use of
+                    physical force or aggression to harm or intimidate another
+                    person. This type of bullying can include hitting, kicking,
+                    pushing or any other physical action intended to cause harm
+                    or injury.
+                  </p>
+                </li>
+
+                <!-- Type 2 -->
+                <li class="tab-content__list-item type">
+                  <h4 class="type__heading">Verbal bullying</h4>
+
+                  <p class="type__description">
+                    Verbal bullying involves using words to hurt or intimidate
+                    another person. This can include teasing, name-calling,
+                    spreading rumors, or any other form of verbal aggression.
+                    Verbal bullying can be particularly destructive because it
+                    can be difficult to get rid of and can leave emotional scars
+                    that will last a lifetime.
+                  </p>
+                </li>
+
+                <!-- Type 3 -->
+                <li class="tab-content__list-item type">
+                  <h4 class="type__heading">Cyberbullying</h4>
+
+                  <p class="type__description">
+                    In today's digital age, cyberbullying is an increasingly
+                    common form of bullying. It involves using technology such
+                    as social media, text messaging or email to harass,
+                    intimidate or embarrass another person. Cyberbullying can
+                    take many different forms, such as spreading rumors online,
+                    sharing embarrassing photos or videos, or sending
+                    threatening messages.
+                  </p>
+                </li>
+
+                <!-- Type 4 -->
+                <li class="tab-content__list-item type">
+                  <h4 class="type__heading">Social bullying</h4>
+
+                  <p class="type__description">
+                    Social bullying, also known as relational aggression,
+                    involves using social status or relationships to hurt or
+                    intimidate another person. This can include excluding
+                    someone from a social group, spreading rumors, or using
+                    social media to humiliate another person. Social bullying
+                    can be particularly difficult to detect because it is often
+                    done in secret or behind closed doors.
+                  </p>
+                </li>
+
+                <!-- Type 5 -->
+                <li class="tab-content__list-item type">
+                  <h4 class="type__heading">Sexual bullying</h4>
+
+                  <p class="type__description">
+                    Sexual bullying is a form of bullying that includes
+                    unwelcome sexual advances, comments or behavior. It can
+                    include inappropriate touching, sexual advances, or any
+                    other behavior intended to intimidate, humiliate, or coerce
+                    another person into sexual activity. Sexual bullying can be
+                    particularly destructive and traumatic, and it can have
+                    long-term consequences for the victim.
+                  </p>
+                </li>
+
+                <!-- Type 6 -->
+                <li class="tab-content__list-item type">
+                  <h4 class="type__heading">Racial bullying</h4>
+
+                  <p class="type__description">
+                    Racial bullying involves using someone's race or ethnicity
+                    to harass or intimidate them. This can include using racial
+                    slurs, making derogatory comments or engaging in
+                    discriminatory behavior. Racial bullying can be particularly
+                    harmful as it affects a person's identity and can lead to
+                    feelings of isolation and discrimination.
+                  </p>
+                </li>
+              </ul>
+            </li>
+
+            <!-- Tab Content 3 -->
+            <li class="tabs__content-list-item tab-content">
+              <ul class="tab-content__list">
+                <!-- Consequence 1 -->
+                <li class="tab-content__list-item consequence">
+                  <h4 class="consequence__heading">Psychological Effects</h4>
+
+                  <p class="consequence__description">
+                    The psychological effects of bullying include depression,
+                    anxiety, low self-esteem, selfharming behavior (especially
+                    for girls), alcohol and drug use and dependence, aggression,
+                    and involvement in violence or crime (especially for boys).
+                    While bullying can lead to mental health problems for any
+                    child, those who already have mental health difficulties are
+                    even more likely to be bullied and to experience its
+                    negative effects.
+                  </p>
+                </li>
+
+                <!-- Consequence 2 -->
+                <li class="tab-content__list-item consequence">
+                  <h4 class="consequence__heading">Physical Effects</h4>
+
+                  <p class="consequence__description">
+                    The physical effects of bullying can be obvious and
+                    immediate, such as being injured from a physical attack.
+                    However, the ongoing stress and trauma of being bullied can
+                    also lead to physical problems over time. A child who is
+                    bullied could develop sleep disorders - such as difficulty
+                    falling asleep or staying asleep - stomachaches, headaches,
+                    heart palpitations, dizziness, bedwetting, and chronic pain
+                    and somatization (i.e., a syndrome of distressful, physical
+                    symptoms that cannot be explained by a medical cause).
+                  </p>
+                </li>
+
+                <!-- Consequence 3 -->
+                <li class="tab-content__list-item consequence">
+                  <h4 class="consequence__heading">Academic Effects</h4>
+
+                  <p class="consequence__description">
+                    Research has consistently shown that bullying can have a
+                    negative impact on how well children and adolescents do in
+                    school. It has a negative impact on both grades and
+                    standardized test scores starting as early as kindergarten
+                    and continuing through high school.
+                  </p>
+                </li>
+              </ul>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- Carousel -->
+      <section class="carousel" id="carousel">
+        <ol class="carousel__list">
+          <!-- Quote 1 -->
+          <li class="carousel__list-item quote quote--selected">
+            <img
+              src="./assets/images/carousel/andrew-vachss.webp"
+              alt="Andrew Vachss"
+              class="quote__image"
+              loading="lazy"
+            />
+
+            <div class="quote__text-content">
+              <p class="quote__text">
+                <svg class="quote__left-mark">
+                  <use href="./assets/icons/carousel.svg#left-mark" />
+                </svg>
+                Life is a fight, but not everyone's a fighter. Otherwise,
+                bullies would be an endangered species.
+                <svg class="quote__right-mark">
+                  <use href="./assets/icons/carousel.svg#right-mark" />
+                </svg>
+              </p>
+
+              <p class="quote__author">Andrew Vachss</p>
+            </div>
+
+            <button class="quote__button quote__button-back">&xlarr;</button>
+
+            <button class="quote__button quote__button-next">&xrarr;</button>
+          </li>
+
+          <!-- Quote 2 -->
+          <li class="carousel__list-item quote">
+            <img
+              src="./assets/images/carousel/heather-brewer.webp"
+              alt="Heather Brewer"
+              class="quote__image"
+              loading="lazy"
+            />
+
+            <div class="quote__text-content">
+              <p class="quote__text">
+                <svg class="quote__left-mark">
+                  <use href="./assets/icons/carousel.svg#left-mark" />
+                </svg>
+                Bullying is a horrible thing. It sticks with you forever. It
+                poisons you. But only if you let it.
+                <svg class="quote__right-mark">
+                  <use href="./assets/icons/carousel.svg#right-mark" />
+                </svg>
+              </p>
+
+              <p class="quote__author">Heather Brewer</p>
+            </div>
+
+            <button class="quote__button quote__button-back">&xlarr;</button>
+
+            <button class="quote__button quote__button-next">&xrarr;</button>
+          </li>
+
+          <!-- Quote 3 -->
+          <li class="carousel__list-item quote">
+            <img
+              src="./assets/images/carousel/unknown.webp"
+              alt="Me"
+              class="quote__image"
+              loading="lazy"
+            />
+
+            <div class="quote__text-content">
+              <p class="quote__text">
+                <svg class="quote__left-mark">
+                  <use href="./assets/icons/carousel.svg#left-mark" />
+                </svg>
+                Strong people stand up for themselves. But the strongest people
+                stand up for others.
+                <svg class="quote__right-mark">
+                  <use href="./assets/icons/carousel.svg#right-mark" />
+                </svg>
+              </p>
+
+              <p class="quote__author">Unknown</p>
+            </div>
+
+            <button class="quote__button quote__button-back">&xlarr;</button>
+
+            <button class="quote__button quote__button-next">&xrarr;</button>
+          </li>
+
+          <!-- Quote 4 -->
+          <li class="carousel__list-item quote">
+            <img
+              src="./assets/images/carousel/ralph-w-sockman.webp"
+              alt="Ralph W. Sockman"
+              class="quote__image"
+              loading="lazy"
+            />
+
+            <div class="quote__text-content">
+              <p class="quote__text">
+                <svg class="quote__left-mark">
+                  <use href="./assets/icons/carousel.svg#left-mark" />
+                </svg>
+                The test of courage comes when we are in the minority. The test
+                of tolerance comes when we are in the majority.
+                <svg class="quote__right-mark">
+                  <use href="./assets/icons/carousel.svg#right-mark" />
+                </svg>
+              </p>
+
+              <p class="quote__author">Ralph W. Sockman</p>
+            </div>
+
+            <button class="quote__button quote__button-back">&xlarr;</button>
+
+            <button class="quote__button quote__button-next">&xrarr;</button>
+          </li>
+
+          <!-- Quote 5 -->
+          <li class="carousel__list-item quote">
+            <img
+              src="./assets/images/carousel/lady-gaga.webp"
+              alt="Lady Gaga"
+              class="quote__image"
+              loading="lazy"
+            />
+
+            <div class="quote__text-content">
+              <p class="quote__text">
+                <svg class="quote__left-mark">
+                  <use href="./assets/icons/carousel.svg#left-mark" />
+                </svg>
+                Don't you ever let a soul in the world tell you that you can't
+                be exactly who you are.
+                <svg class="quote__right-mark">
+                  <use href="./assets/icons/carousel.svg#right-mark" />
+                </svg>
+              </p>
+
+              <p class="quote__author">Lady Gaga</p>
+            </div>
+
+            <button class="quote__button quote__button-back">&xlarr;</button>
+
+            <button class="quote__button quote__button-next">&xrarr;</button>
+          </li>
+        </ol>
+
+        <div class="carousel__buttons">
+          <button class="carousel__button carousel__button-back">
+            &xlarr;
+          </button>
+
+          <button class="carousel__button carousel__button-next">
+            &xrarr;
+          </button>
+        </div>
+
+        <div class="carousel__indicators">
+          <span class="carousel__indicator carousel__indicator--selected">
+            &#9679;
+          </span>
+
+          <span class="carousel__indicator">&#9675;</span>
+
+          <span class="carousel__indicator">&#9675;</span>
+
+          <span class="carousel__indicator">&#9675;</span>
+
+          <span class="carousel__indicator">&#9675;</span>
+        </div>
+      </section>
+
+      <!-- Contacts -->
+      <section class="contacts" id="contacts">
+        <div class="contacts__heading-box">
+          <h2 class="contacts__heading">
+            Being strong is hard,
+            <br />
+            we've got your back.
+          </h2>
+
+          <p class="contacts__description">
+            You're on the way to live the life
+            <br />
+            you've never lived.
+          </p>
+        </div>
+
+        <ul class="contacts__list">
+          <!-- Contact 1 -->
+          <li class="contacts__list-item contact contact--color-main">
+            <svg class="contact__icon">
+              <use href="./assets/icons/contacts.svg#email" />
+            </svg>
+
+            <div class="contact__text-content">
+              <h3 class="contact__heading">Contact Us</h3>
+
+              <p class="contact__description">danil.dikhtyaris@gmail.com</p>
+            </div>
+          </li>
+
+          <!-- Contact 2 -->
+          <li class="contacts__list-item contact contact--color-grey">
+            <svg class="contact__icon">
+              <use href="./assets/icons/contacts.svg#helpline" />
+            </svg>
+
+            <div class="contact__text-content">
+              <h3 class="contact__heading">Local Helpline</h3>
+
+              <p class="contact__description">1-800-273-8255</p>
+            </div>
+          </li>
+        </ul>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p class="footer__description">Designed and made by Danil Dikhtyar</p>
+
+      <a href="#top" class="footer__website-logo website-logo">
+        <svg class="website-logo__icon">
+          <use href="./assets/icons/header.svg#website-logo" />
+        </svg>
+
+        <p class="website-logo__heading">no-bullying.org</p>
+      </a>
+
+      <p class="footer__copyright">&copy; 2024 no-bullying.org</p>
+    </footer>
+  </body>
+</html>
