@@ -333,7 +333,7 @@ nextButton?.addEventListener("click", () => {
         studentsViolanceDescription !== null &&
         teachersViolanceDescription !== null
       ) {
-        if (studentViolanceScore > 0 && document.URL.includes("en/quiz.html")) {
+        if (studentViolanceScore > 0 && document.URL.includes("en/quiz")) {
           studentsViolanceDescription.textContent =
             "Violance in class from students detected";
         } else if (
@@ -346,7 +346,7 @@ nextButton?.addEventListener("click", () => {
           studentsViolanceIcon?.classList.add("violance-icon--hidden");
         }
 
-        if (teacherViolanceScore > 0 && document.URL.includes("en/quiz.html")) {
+        if (teacherViolanceScore > 0 && document.URL.includes("en/quiz")) {
           teachersViolanceDescription.textContent =
             "Violance in class from teachers detected";
         } else if (
