@@ -338,7 +338,7 @@ nextButton?.addEventListener("click", () => {
             "Violance in class from students detected";
         } else if (
           studentViolanceScore > 0 &&
-          document.URL.includes("ru/quiz.html")
+          document.URL.includes("ru/quiz")
         ) {
           studentsViolanceDescription.textContent =
             "Насилие в классе со стороны учеников";
@@ -351,7 +351,7 @@ nextButton?.addEventListener("click", () => {
             "Violance in class from teachers detected";
         } else if (
           teacherViolanceScore > 0 &&
-          document.URL.includes("ru/quiz.html")
+          document.URL.includes("ru/quiz")
         ) {
           teachersViolanceDescription.textContent =
             "Насилие в классе со стороны учителей";
