@@ -11,6 +11,10 @@
   &--fixed {
     position: fixed;
   }
+
+  &__menus-container {
+    @include flex($align: center, $gap: $gap-medium);
+  }
 }
 
 .website-logo {
@@ -25,6 +29,52 @@
 
     color: $color-grey;
     letter-spacing: $ls-medium;
+  }
+}
+
+.language-menu {
+  position: relative;
+  display: flex;
+
+  &__button {
+    background-color: transparent;
+    cursor: pointer;
+  }
+
+  &__icon {
+    @include dimensions(3rem, 3rem);
+
+    pointer-events: none;
+  }
+
+  &__content {
+    @include position(
+      $position: absolute,
+      $top: calc(100% + 0.25rem),
+      $left: 0
+    );
+    @include flex($direction: column, $justify: center, $gap: $gap-small);
+    @include font(
+      $size: $fs-extra-small,
+      $weight: $fw-bold,
+      $family: $ff-serif
+    );
+
+    background-color: $color-overlay;
+    color: $color-main;
+    border-radius: $br-medium;
+    pointer-events: none;
+    box-shadow: 0 0.2rem 0.5rem 0 rgba(0 0 0 / 10%);
+    transform: translateY(-0.1rem);
+    padding: 1.5rem;
+    opacity: 0;
+    transition: all 0.15s;
+  }
+
+  &--active > &__content {
+    pointer-events: all;
+    transform: translateY(0);
+    opacity: 1;
   }
 }
 

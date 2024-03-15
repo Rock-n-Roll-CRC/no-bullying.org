@@ -43,7 +43,7 @@
   @include flex($gap: $gap-medium);
 
   &__content {
-    @include flex($direction: column, $gap: $gap-medium);
+    @include flex($direction: column, $align: center, $gap: $gap-medium);
   }
 
   &__image {

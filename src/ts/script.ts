@@ -1,3 +1,26 @@
+// Language Menu
+document.addEventListener("click", (e) => {
+  const eTarget = e.target as HTMLElement;
+
+  if (eTarget !== null) {
+    const isDropdownButton = eTarget.matches(".language-menu__button");
+
+    if (!isDropdownButton && eTarget.closest(".language-menu") !== null) return;
+
+    if (isDropdownButton) {
+      const dropdownMenu = eTarget.closest(".language-menu");
+
+      dropdownMenu?.classList.toggle("language-menu--active");
+    }
+
+    if (!isDropdownButton) {
+      const dropdownMenu = document.querySelector(".language-menu");
+
+      dropdownMenu?.classList.remove("language-menu--active");
+    }
+  }
+});
+
 // Navigation Menu
 const header = document.querySelector(".header");
 const hamburgerMenu = document.querySelector(".hamburger-menu");
@@ -310,16 +333,28 @@ nextButton?.addEventListener("click", () => {
         studentsViolanceDescription !== null &&
         teachersViolanceDescription !== null
       ) {
-        if (studentViolanceScore > 0) {
+        if (studentViolanceScore > 0 && document.URL.includes("en/quiz.html")) {
           studentsViolanceDescription.textContent =
             "Violance in class from students detected";
+        } else if (
+          studentViolanceScore > 0 &&
+          document.URL.includes("ru/quiz.html")
+        ) {
+          studentsViolanceDescription.textContent =
+            "Насилие в классе со стороны учеников";
         } else {
           studentsViolanceIcon?.classList.add("violance-icon--hidden");
         }
 
-        if (teacherViolanceScore > 0) {
+        if (teacherViolanceScore > 0 && document.URL.includes("en/quiz.html")) {
           teachersViolanceDescription.textContent =
             "Violance in class from teachers detected";
+        } else if (
+          teacherViolanceScore > 0 &&
+          document.URL.includes("ru/quiz.html")
+        ) {
+          teachersViolanceDescription.textContent =
+            "Насилие в классе со стороны учителей";
         } else {
           teachersViolanceIcon?.classList.add("violance-icon--hidden");
         }

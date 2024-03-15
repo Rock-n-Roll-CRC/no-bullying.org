@@ -48,6 +48,15 @@
     }
   }
 
+  &__link-language {
+    @include position($position: absolute, $bottom: 2rem, $right: 0);
+    @include font($size: $fs-small, $weight: $fw-semi-bold);
+
+    &::after {
+      display: none;
+    }
+  }
+
   &__cta {
     @include colors($color-grey, $color-main);
     @include font($size: $fs-large, $weight: $fw-semi-bold);

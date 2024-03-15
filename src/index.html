@@ -67,43 +67,60 @@
         <h1 class="website-logo__heading">no-bullying.org</h1>
       </a>
 
-      <!-- Hamburger Menu -->
-      <button
-        class="header__hamburger-menu hamburger-menu"
-        aria-controls="primary-navigation"
-        aria-expanded="false"
-      >
-        <svg
-          fill="currentColor"
-          class="hamburger-menu__icon"
-          viewBox="0 0 100 100"
+      <div class="header__menus-container">
+        <!-- Language Menu -->
+        <div class="header__language-menu language-menu">
+          <button class="language-menu__button">
+            <svg class="language-menu__icon">
+              <use href="./assets/icons/header.svg#language-menu" />
+            </svg>
+          </button>
+
+          <div class="language-menu__content">
+            <a href="./index.html" class="language-menu__link">english</a>
+
+            <a href="./ru/index.html" class="language-menu__link">russian</a>
+          </div>
+        </div>
+
+        <!-- Hamburger Menu -->
+        <button
+          class="header__hamburger-menu hamburger-menu"
+          aria-controls="primary-navigation"
+          aria-expanded="false"
         >
-          <rect
-            class="hamburger-menu__line hamburger-menu__line-top"
-            width="80"
-            height="5"
-            x="10"
-            y="25"
-            rx="5"
-          ></rect>
-          <rect
-            class="hamburger-menu__line hamburger-menu__line-middle"
-            width="80"
-            height="5"
-            x="10"
-            y="45"
-            rx="5"
-          ></rect>
-          <rect
-            class="hamburger-menu__line hamburger-menu__line-bottom"
-            width="80"
-            height="5"
-            x="10"
-            y="65"
-            rx="5"
-          ></rect>
-        </svg>
-      </button>
+          <svg
+            fill="currentColor"
+            class="hamburger-menu__icon"
+            viewBox="0 0 100 100"
+          >
+            <rect
+              class="hamburger-menu__line hamburger-menu__line-top"
+              width="80"
+              height="5"
+              x="10"
+              y="25"
+              rx="5"
+            ></rect>
+            <rect
+              class="hamburger-menu__line hamburger-menu__line-middle"
+              width="80"
+              height="5"
+              x="10"
+              y="45"
+              rx="5"
+            ></rect>
+            <rect
+              class="hamburger-menu__line hamburger-menu__line-bottom"
+              width="80"
+              height="5"
+              x="10"
+              y="65"
+              rx="5"
+            ></rect>
+          </svg>
+        </button>
+      </div>
 
       <!-- Navigataion Menu -->
       <nav
@@ -132,7 +149,9 @@
           </li>
 
           <li class="navigation-menu__list-item">
-            <a href="./quiz.html" class="navigation-menu__cta">Take the quiz</a>
+            <a href="./en/quiz.html" class="navigation-menu__cta">
+              Take the quiz
+            </a>
           </li>
         </ul>
       </nav>
@@ -163,7 +182,7 @@
           personalized just for you.
         </p>
 
-        <a href="./quiz.html" class="hero__cta">Take the quiz</a>
+        <a href="./en/quiz.html" class="hero__cta">Take the quiz</a>
       </section>
 
       <!-- Steps -->
@@ -243,7 +262,7 @@
         <article class="steps__cta cta-block">
           <p class="cta-block__heading">Let's get started</p>
 
-          <a href="./quiz.html" class="cta-block__button">Take the quiz</a>
+          <a href="./en/quiz.html" class="cta-block__button">Take the quiz</a>
         </article>
       </section>
 
@@ -708,7 +727,7 @@
             <div class="contact__text-content">
               <h3 class="contact__heading">Contact Us</h3>
 
-              <p class="contact__description">danil.dikhtyar@gmail.com</p>
+              <p class="contact__description">danil.dikhtyaris@gmail.com</p>
             </div>
           </li>
 

@@ -112,7 +112,12 @@
   }
 
   &__sub-container {
-    @include flex($direction: column, $justify: center, $gap: $gap-medium);
+    @include flex(
+      $direction: column,
+      $justify: center,
+      $align: center,
+      $gap: $gap-medium
+    );
   }
 
   &__list {
@@ -164,7 +169,7 @@
   &__heading {
     @include font($size: $fs-medium, $weight: $fw-semi-bold);
 
-    width: 10rem;
+    width: 12.5rem;
     text-align: center;
     background-color: $color-grey;
     color: $color-main;
