@@ -1,0 +1,52 @@
+/* stylelint-disable */
+
+@use "../settings" as *;
+
+@mixin position(
+  $position,
+  $top: auto,
+  $right: auto,
+  $bottom: auto,
+  $left: auto
+) {
+  position: $position;
+  inset: $top $right $bottom $left;
+}
+
+@mixin flex($direction: null, $align: null, $justify: null, $gap: null) {
+  display: flex;
+  flex-direction: $direction;
+  align-items: $align;
+  justify-content: $justify;
+  gap: $gap;
+}
+
+@mixin dimensions($width, $height: null) {
+  width: 100%;
+  max-width: $width;
+  height: $height;
+}
+
+@mixin colors($color, $background-color) {
+  color: $color;
+  background-color: $background-color;
+}
+
+@mixin font($size: null, $weight: null, $height: null, $family: null) {
+  font-size: $size;
+  font-weight: $weight;
+  line-height: $height;
+  font-family: $family;
+}
+
+@mixin media-up($size) {
+  @media (min-width: map-get($breakpoints-up, $size)) {
+    @content;
+  }
+}
+
+@mixin media-down($size) {
+  @media (max-width: map-get($breakpoints-down, $size)) {
+    @content;
+  }
+}

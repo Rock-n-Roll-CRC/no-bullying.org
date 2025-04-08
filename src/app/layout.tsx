@@ -1,5 +1,9 @@
 import type { ReactNode } from "react";
 
+import { inter } from "@/utilities/fonts";
+
+import "@/styles/main.scss";
+
 export const metadata = {
   title: {
     default: "no-bullying.org",
@@ -27,7 +31,7 @@ export const metadata = {
 const RootLayout = ({ children }: { children: ReactNode }) => {
   return (
     <html lang="en-US">
-      <body>{children}</body>
+      <body className={inter.className}>{children}</body>
     </html>
   );
 };
