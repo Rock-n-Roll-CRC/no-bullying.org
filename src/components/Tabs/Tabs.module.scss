@@ -1,0 +1,108 @@
+/* stylelint-disable plugin/use-logical-properties-and-values */
+
+@use "../../styles/settings" as *;
+@use "../../styles/tools" as *;
+
+.tabs {
+  @include flex($direction: column, $align: center, $gap: $gap-large);
+  @include colors($color-main, $color-grey);
+
+  padding: 7.1rem 0;
+
+  &__heading {
+    @include font($size: $fs-extra-large);
+
+    text-align: center;
+    letter-spacing: $ls-small;
+  }
+
+  &__body {
+    @include flex($direction: column, $gap: $gap-medium);
+
+    @include media-up(laptop) {
+      flex-direction: row;
+      gap: $gap-large;
+    }
+  }
+
+  &__label-list {
+    @include flex($justify: center);
+
+    width: 100%;
+
+    @include media-up(laptop) {
+      flex-direction: column;
+      align-self: flex-start;
+      max-width: max-content;
+    }
+  }
+
+  &__content-list {
+    padding: 0 2rem;
+
+    @include media-up(mobile-l) {
+      max-width: 65rem;
+    }
+
+    @include media-up(laptop) {
+      max-width: 65rem;
+      padding: 0;
+    }
+  }
+}
+
+.label {
+  padding: 0 1.5rem 1rem;
+  cursor: pointer;
+  border-bottom: 0.3rem solid $color-accent;
+
+  @include media-up(laptop) {
+    padding: 3rem 0 3rem 1.5rem;
+    border-bottom: 0;
+    border-left: 0.3rem solid $color-accent;
+  }
+
+  &--selected {
+    border-bottom-color: $color-main;
+
+    @include media-up(laptop) {
+      border-left-color: $color-main;
+    }
+  }
+
+  &__heading {
+    cursor: pointer;
+  }
+}
+
+.tab-content {
+  display: none;
+
+  &--selected {
+    @include flex($direction: column, $gap: $gap-medium);
+  }
+}
+
+.list {
+  @include flex($direction: column, $gap: $gap-medium);
+
+  @include media-up(laptop) {
+    &:not(.list--bullet-point) {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  &--bullet-point {
+    padding-left: 2rem;
+    list-style: disc;
+
+    li {
+      display: list-item;
+    }
+  }
+}
+
+.list-item {
+  @include flex($direction: column, $gap: $gap-small);
+}

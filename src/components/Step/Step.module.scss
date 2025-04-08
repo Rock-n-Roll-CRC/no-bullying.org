@@ -1,0 +1,36 @@
+/* stylelint-disable plugin/use-logical-properties-and-values */
+
+@use "../../styles/settings" as *;
+@use "../../styles/tools" as *;
+
+.step {
+  @include flex($gap: $gap-medium);
+
+  &__body {
+    @include flex($direction: column, $align: center, $gap: $gap-medium);
+  }
+
+  &__image {
+    width: 25rem;
+    height: 25rem;
+  }
+
+  &__text-content {
+    @include flex($direction: column, $gap: $gap-small);
+  }
+
+  &__heading {
+    @include font($size: $fs-small, $weight: $fw-bold);
+
+    text-transform: uppercase;
+    letter-spacing: $ls-large;
+  }
+
+  &__description {
+    @include font($height: $lh-large);
+  }
+
+  &__separator {
+    width: 12rem;
+  }
+}

@@ -1,0 +1,43 @@
+/* stylelint-disable plugin/use-defensive-css */
+/* stylelint-disable plugin/use-logical-properties-and-values */
+
+@use "../../styles/settings" as *;
+@use "../../styles/tools" as *;
+
+.steps {
+  @include flex($direction: column, $align: center, $gap: $gap-large);
+  @include colors($color-main, $color-grey);
+
+  padding: 7.5rem 0;
+  text-align: center;
+
+  &__heading {
+    @include font($size: $fs-extra-large);
+
+    letter-spacing: $ls-small;
+  }
+
+  &__list {
+    @include flex($gap: $gap-medium);
+
+    width: 100%;
+    overflow-x: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    @include media-up(laptop) {
+      justify-content: center;
+    }
+  }
+
+  &__separator {
+    @include dimensions(80%, 0.1rem);
+
+    background-color: $color-accent;
+    border: 0;
+  }
+}

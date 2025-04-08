@@ -1,0 +1,43 @@
+/* stylelint-disable plugin/use-logical-properties-and-values */
+
+@use "../../styles/settings" as *;
+@use "../../styles/tools" as *;
+
+.statistic-item {
+  @include flex($direction: column, $align: center, $gap: $gap-medium);
+  @include colors($color-grey, $color-main);
+
+  padding: 4rem;
+
+  @include media-up(tablet) {
+    flex: 1;
+    padding: 4rem 0;
+  }
+
+  &:not(:last-child) {
+    border-bottom: 0.1rem solid $color-grey;
+
+    @include media-up(tablet) {
+      border-right: 0.1rem solid $color-grey;
+      border-bottom: 0;
+    }
+  }
+
+  &__icon {
+    @include dimensions(5rem, 5rem);
+  }
+
+  &__text-content {
+    @include flex($direction: column, $align: center, $gap: $gap-small);
+  }
+
+  &__value {
+    @include font($size: 4rem, $weight: $fw-bold);
+  }
+
+  &__description {
+    @include font($height: $lh-large);
+
+    text-align: center;
+  }
+}

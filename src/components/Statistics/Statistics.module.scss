@@ -1,0 +1,12 @@
+/* stylelint-disable plugin/use-defensive-css */
+
+@use "../../styles/settings" as *;
+@use "../../styles/tools" as *;
+
+.statistics {
+  &__list {
+    @include media-up(tablet) {
+      display: flex;
+    }
+  }
+}

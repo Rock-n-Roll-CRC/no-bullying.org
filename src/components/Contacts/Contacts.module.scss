@@ -1,0 +1,69 @@
+@use "../../styles/settings" as *;
+@use "../../styles/tools" as *;
+
+.contacts {
+  @include flex($direction: column, $gap: $gap-large);
+
+  padding: 7.5rem 4rem;
+  background:
+    no-repeat center/cover url("../../assets/images/contacts.webp"),
+    $color-grey;
+  background-blend-mode: overlay;
+
+  &__heading-box {
+    @include flex($direction: column, $align: center, $gap: $gap-medium);
+
+    color: $color-main;
+    text-align: center;
+  }
+
+  &__heading {
+    @include font($size: $fs-extra-large);
+
+    letter-spacing: $ls-small;
+  }
+
+  &__description {
+    line-height: $lh-large;
+  }
+
+  &__list {
+    @include flex($direction: column, $align: center, $gap: $gap-medium);
+
+    @include media-up(laptop) {
+      @include flex($direction: row, $justify: center);
+    }
+  }
+}
+
+.contact {
+  @include flex($direction: column, $gap: $gap-medium);
+  @include dimensions($width: 30rem);
+
+  padding: 2.5rem;
+  border-radius: $br-large;
+
+  &--color-main {
+    @include colors($color-grey, $color-main);
+  }
+
+  &--color-grey {
+    @include colors($color-main, $color-grey);
+  }
+
+  &__icon {
+    @include dimensions(5rem, 5rem);
+  }
+
+  &__text-content {
+    @include flex($direction: column, $gap: $gap-small);
+  }
+
+  &__heading {
+    font-weight: $fw-bold;
+  }
+
+  &__description {
+    @include font($size: $fs-medium, $weight: $fw-medium);
+  }
+}
