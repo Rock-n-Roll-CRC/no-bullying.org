@@ -1,0 +1,47 @@
+/* stylelint-disable scale-unlimited/declaration-strict-value */
+
+@use "../../styles/settings" as *;
+@use "../../styles/tools" as *;
+
+.language-select {
+  position: relative;
+  display: flex;
+  flex-wrap: nowrap;
+
+  &__button {
+    cursor: pointer;
+    background-color: transparent;
+
+    svg {
+      @include dimensions(3rem, 3rem);
+
+      pointer-events: none;
+    }
+  }
+
+  &__body {
+    @include position(
+      $position: absolute,
+      $top: calc(100% + 0.25rem),
+      $left: 0
+    );
+    @include flex($direction: column, $justify: center, $gap: $gap-small);
+    @include font($size: $fs-extra-small, $weight: $fw-bold);
+
+    padding: 1.5rem;
+    color: $color-main;
+    pointer-events: none;
+    background-color: $color-overlay;
+    border-radius: $br-medium;
+    box-shadow: 0 0.2rem 0.5rem 0 rgba(0 0 0 / 10%);
+    opacity: 0;
+    transform: translateY(-0.1rem);
+    transition: all 0.15s;
+  }
+
+  &--active > &__body {
+    pointer-events: all;
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -1,0 +1,17 @@
+@use "../../styles/settings" as *;
+@use "../../styles/tools" as *;
+
+.logo {
+  @include flex($align: center, $gap: $gap-small);
+
+  &__icon {
+    @include dimensions(3.5rem, 3.5rem);
+  }
+
+  &__caption {
+    @include font($size: $fs-large, $weight: $fw-bold);
+
+    color: $color-grey;
+    letter-spacing: $ls-medium;
+  }
+}

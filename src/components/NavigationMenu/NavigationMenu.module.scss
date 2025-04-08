@@ -1,0 +1,134 @@
+/* stylelint-disable plugin/use-defensive-css */
+/* stylelint-disable plugin/use-logical-properties-and-values */
+/* stylelint-disable plugin/use-logical-units */
+/* stylelint-disable rem-over-px/rem-over-px */
+/* stylelint-disable scale-unlimited/declaration-strict-value */
+
+@use "../../styles/settings" as *;
+@use "../../styles/tools" as *;
+
+.navigation-menu {
+  display: flex;
+  align-items: center;
+
+  &__button {
+    z-index: 999;
+    background-color: transparent;
+
+    svg {
+      @include dimensions(3rem, 3rem);
+
+      color: $color-grey;
+      cursor: pointer;
+      transition: color 0.5s;
+    }
+
+    rect {
+      transform-origin: center;
+      transition:
+        y 300ms ease-in 300ms,
+        rotate 300ms ease-in,
+        opacity 0ms 300ms;
+    }
+
+    &[aria-expanded="true"] svg {
+      color: $color-main;
+    }
+
+    &[aria-expanded="true"] rect {
+      transition:
+        y 300ms ease-in,
+        rotate 300ms ease-in 300ms,
+        opacity 0ms 300ms;
+    }
+
+    &[aria-expanded="true"] rect:nth-child(1),
+    &[aria-expanded="true"] rect:nth-child(3) {
+      y: 47.5;
+    }
+
+    &[aria-expanded="true"] rect:nth-child(1) {
+      rotate: 45deg;
+    }
+
+    &[aria-expanded="true"] rect:nth-child(2) {
+      opacity: 0;
+    }
+
+    &[aria-expanded="true"] rect:nth-child(3) {
+      rotate: -45deg;
+    }
+  }
+
+  &__body {
+    @include position(fixed, 0, 0, 0, 0);
+    @include flex($align: center, $justify: center);
+
+    background-color: $color-overlay;
+    backdrop-filter: blur(5px);
+    transform: translateX(100vw);
+    transition: transform 0.5s;
+
+    &--visible {
+      transform: translateX(0);
+    }
+  }
+
+  &__list {
+    @include flex($direction: column, $gap: $gap-large);
+
+    text-align: center;
+  }
+
+  &__link {
+    @include font($size: $fs-extra-large, $weight: $fw-bold);
+
+    position: relative;
+    padding: 0 1.5rem;
+    color: $color-main;
+
+    &::after {
+      @include position($position: absolute, $bottom: -1rem, $left: 50%);
+
+      display: block;
+      width: 0;
+      height: 2px;
+      content: "";
+      background: $color-accent;
+      transition:
+        width 0.3s ease,
+        left 0.3s ease;
+    }
+
+    &:hover::after {
+      left: 0;
+      width: 100%;
+    }
+  }
+
+  &__link-language {
+    @include position($position: absolute, $bottom: 2rem, $right: 0);
+    @include font($size: $fs-small, $weight: $fw-semi-bold);
+
+    &::after {
+      display: none;
+    }
+  }
+
+  &__cta {
+    @include colors($color-grey, $color-main);
+    @include font($size: $fs-large, $weight: $fw-semi-bold);
+
+    padding: 1.7rem 3rem;
+    cursor: pointer;
+    border-radius: $br-maximum;
+
+    &:hover {
+      opacity: 0.8;
+    }
+
+    &:active {
+      opacity: 0.7;
+    }
+  }
+}

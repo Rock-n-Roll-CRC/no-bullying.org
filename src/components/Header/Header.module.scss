@@ -1,0 +1,18 @@
+@use "../../styles/settings" as *;
+@use "../../styles/tools" as *;
+
+.header {
+  @include position(absolute, 0, 0, auto, 0);
+  @include flex($align: center, $justify: space-around);
+
+  z-index: 999;
+  padding: 1.5rem 0;
+
+  &--fixed {
+    position: fixed;
+  }
+
+  &__container {
+    @include flex($align: center, $gap: $gap-medium);
+  }
+}
