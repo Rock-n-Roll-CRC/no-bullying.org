@@ -30,18 +30,12 @@
 
     padding: 1.5rem;
     color: $color-main;
-    pointer-events: none;
+    pointer-events: all;
     background-color: $color-overlay;
     border-radius: $br-medium;
     box-shadow: 0 0.2rem 0.5rem 0 rgba(0 0 0 / 10%);
-    opacity: 0;
-    transform: translateY(-0.1rem);
-    transition: all 0.15s;
-  }
-
-  &--active > &__body {
-    pointer-events: all;
     opacity: 1;
     transform: translateY(0);
+    transition: all 0.15s;
   }
 }
