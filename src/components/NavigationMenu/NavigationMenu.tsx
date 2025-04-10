@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import Link from "next/link";
 
 import { merriweather } from "@/utilities/fonts";
@@ -5,12 +8,19 @@ import { merriweather } from "@/utilities/fonts";
 import styles from "./NavigationMenu.module.scss";
 
 const NavigationMenu = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  function handleToggleOpen() {
+    setIsOpen((isOpen) => !isOpen);
+  }
+
   return (
     <div className={styles["navigation-menu"]}>
       <button
+        onClick={handleToggleOpen}
         className={styles["navigation-menu__button"]}
         aria-controls="primary-navigation"
-        aria-expanded="false"
+        aria-expanded={isOpen}
       >
         <svg fill="currentColor" viewBox="0 0 100 100">
           <rect width="80" height="5" x="10" y="25" rx="5"></rect>
@@ -19,7 +29,13 @@ const NavigationMenu = () => {
         </svg>
       </button>
 
-      <nav className={styles["navigation-menu__body"]} id="primary-navigation">
+      <nav
+        onBlur={() => {
+          setIsOpen(false);
+        }}
+        className={`${styles["navigation-menu__body"] ?? ""} ${isOpen ? (styles["navigation-menu__body--visible"] ?? "") : ""}`}
+        id="primary-navigation"
+      >
         <ul className={styles["navigation-menu__list"]}>
           <li className={styles["navigation-menu__list-item"]}>
             <a
