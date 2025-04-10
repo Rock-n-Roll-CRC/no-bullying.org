@@ -5,14 +5,16 @@ import { merriweather } from "@/utilities/fonts";
 import styles from "./Step.module.scss";
 
 const Step = ({
+  lang,
   Illustration,
   heading,
   description,
   Separator,
 }: {
+  lang?: "ru";
   Illustration: FC<SVGProps<SVGElement>>;
-  heading: string;
-  description: ReactNode;
+  heading: { en: string; ru: string };
+  description: { en: ReactNode; ru: ReactNode };
   Separator?: FC<SVGProps<SVGElement>>;
 }) => {
   return (
@@ -21,12 +23,14 @@ const Step = ({
         <Illustration className={styles.step__image} />
 
         <div className={styles["step__text-content"]}>
-          <h3 className={styles.step__heading}>{heading}</h3>
+          <h3 className={styles.step__heading}>
+            {lang === "ru" ? heading.ru : heading.en}
+          </h3>
 
           <p
             className={`${styles.step__description ?? ""} ${merriweather.className}`}
           >
-            {description}
+            {lang === "ru" ? description.ru : description.en}
           </p>
         </div>
       </article>

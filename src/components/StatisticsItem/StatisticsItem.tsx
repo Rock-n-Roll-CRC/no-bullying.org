@@ -5,13 +5,15 @@ import { merriweather } from "@/utilities/fonts";
 import styles from "./StatisticsItem.module.scss";
 
 const StatisticsItem = ({
+  lang,
   Icon,
   value,
   description,
 }: {
+  lang?: "ru";
   Icon: FC<SVGProps<SVGElement>>;
   value: string;
-  description: ReactNode;
+  description: { en: ReactNode; ru: ReactNode };
 }) => {
   return (
     <li className={styles["statistic-item"]}>
@@ -24,7 +26,9 @@ const StatisticsItem = ({
           {value}
         </p>
 
-        <p className={styles["statistic-item__description"]}>{description}</p>
+        <p className={styles["statistic-item__description"]}>
+          {lang === "ru" ? description.ru : description.en}
+        </p>
       </div>
     </li>
   );

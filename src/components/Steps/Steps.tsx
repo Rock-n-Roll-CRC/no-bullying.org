@@ -15,55 +15,83 @@ const steps = [
   {
     id: 1,
     illustration: Step1,
-    heading: "Take the quiz",
-    description: (
-      <>
-        Tell us about the problem,
-        <br />
-        we&apos;re good listeners.
-      </>
-    ),
+    heading: { en: "Take the quiz", ru: "Пройдите викторину" },
+    description: {
+      en: (
+        <>
+          Tell us about the problem,
+          <br />
+          we&apos;re good listeners.
+        </>
+      ),
+      ru: (
+        <>
+          Расскажите нам о проблеме,
+          <br />
+          мы хорошие слушатели.
+        </>
+      ),
+    },
     separator: ArrowDown,
   },
   {
     id: 2,
     illustration: Step2,
-    heading: "Get the action plan",
-    description: (
-      <>
-        We know you&apos;re feeling lost.
-        <br />
-        We will guide you.
-      </>
-    ),
+    heading: { en: "Get the action plan", ru: "Получите план действий" },
+    description: {
+      en: (
+        <>
+          We know you&apos;re feeling lost.
+          <br />
+          We will guide you.
+        </>
+      ),
+      ru: (
+        <>
+          Мы знаем, что вы потеряны.
+          <br />
+          Мы направим вас в нужном направлении.
+        </>
+      ),
+    },
     separator: ArrowUp,
   },
   {
     id: 3,
     illustration: Step3,
-    heading: "Stick with it",
-    description: (
-      <>
-        Follow the guide and enjoy
-        <br />
-        life to the fullest!
-      </>
-    ),
+    heading: { en: "Stick with it", ru: "Следуйте инструкциям" },
+    description: {
+      en: (
+        <>
+          Follow the guide and enjoy
+          <br />
+          life to the fullest!
+        </>
+      ),
+      ru: (
+        <>
+          Следуйте нашим советам и
+          <br />
+          наслаждайтесь жизнью по полной!
+        </>
+      ),
+    },
   },
 ];
 
-const Steps = () => {
+const Steps = ({ lang }: { lang?: "ru" }) => {
   return (
     <section className={styles.steps} id="steps">
       <h2
         className={`${styles.steps__heading ?? ""} ${merriweather.className}`}
       >
-        How it works
+        {lang === "ru" ? "Как это работает" : "How it works"}
       </h2>
 
       <ol className={styles.steps__list}>
         {steps.map((step) => (
           <Step
+            lang={lang}
             key={step.id}
             Illustration={step.illustration}
             heading={step.heading}
@@ -75,7 +103,7 @@ const Steps = () => {
 
       <hr className={styles.steps__separator} />
 
-      <CTABlock />
+      <CTABlock lang={lang} />
     </section>
   );
 };

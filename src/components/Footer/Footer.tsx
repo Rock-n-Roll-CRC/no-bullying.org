@@ -2,11 +2,15 @@ import Logo from "@/components/Logo/Logo";
 
 import styles from "./Footer.module.scss";
 
-const Footer = () => {
+const Footer = ({ lang, page }: { lang?: "ru"; page?: "quiz" }) => {
   return (
-    <footer className={styles.footer}>
+    <footer
+      className={`${styles.footer ?? ""} ${page ? (styles[`footer--${page}-page`] ?? "") : ""}`}
+    >
       <p className={styles.footer__description}>
-        Designed and made by Danil Dikhtyar
+        {lang === "ru"
+          ? "Разработано Дихтярь Данилом"
+          : "Designed and made by Danil Dikhtyar"}
       </p>
 
       <Logo className={styles.footer__logo} />

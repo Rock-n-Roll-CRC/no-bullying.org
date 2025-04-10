@@ -19,40 +19,55 @@ import styles from "./Carousel.module.scss";
 interface Slide {
   id: number;
   image: StaticImageData;
-  description: string;
-  author: string;
+  description: { en: string; ru: string };
+  author: { en: string; ru: string };
 }
 
 const slides = [
   {
     id: 1,
     image: Image1,
-    description: `Life is a fight, but not everyone's a fighter. Otherwise, bullies would be an endangered species.`,
-    author: `Andrew Vachss`,
+    description: {
+      en: `Life is a fight, but not everyone's a fighter. Otherwise, bullies would be an endangered species.`,
+      ru: `Жизнь - это борьба, но не все являются бойцами. В противном случае хулиганы превратились бы в вымирающий вид.`,
+    },
+    author: { en: `Andrew Vachss`, ru: `Эндрю Вахс` },
   },
   {
     id: 2,
     image: Image2,
-    description: `Bullying is a horrible thing. It sticks with you forever. It poisons you. But only if you let it.`,
-    author: `Heather Brewer`,
+    description: {
+      en: `Bullying is a horrible thing. It sticks with you forever. It poisons you. But only if you let it.`,
+      ru: `Буллинг - ужасная вещь. Он остается с вами навсегда. Он отравляет вас. Но только если вы позволите.`,
+    },
+    author: { en: `Heather Brewer`, ru: `Хизер Брюэр` },
   },
   {
     id: 3,
     image: Image3,
-    description: `Strong people stand up for themselves. But the strongest people stand up for others.`,
-    author: `Unknown`,
+    description: {
+      en: `Strong people stand up for themselves. But the strongest people stand up for others.`,
+      ru: `Сильные люди постоят за себя. Но сильнейшие постоят за других.`,
+    },
+    author: { en: `Unknown`, ru: `Неизвестный` },
   },
   {
     id: 4,
     image: Image4,
-    description: `The test of courage comes when we are in the minority. The test of tolerance comes when we are in the majority.`,
-    author: `Ralph W. Sockman`,
+    description: {
+      en: `The test of courage comes when we are in the minority. The test of tolerance comes when we are in the majority.`,
+      ru: `Испытание мужества наступает, когда мы оказываемся в меньшинстве. Испытание на терпимость происходит, когда мы оказываемся в большинстве.`,
+    },
+    author: { en: `Ralph W. Sockman`, ru: `Ральф В. Сокман` },
   },
   {
     id: 5,
     image: Image5,
-    description: `Don't you ever let a soul in the world tell you that you can't be exactly who you are.`,
-    author: `Lady Gaga`,
+    description: {
+      en: `Don't you ever let a soul in the world tell you that you can't be exactly who you are.`,
+      ru: `Не позволяйте ни одной душе в мире говорить вам, что вы не можете быть тем, кто вы есть.`,
+    },
+    author: { en: `Lady Gaga`, ru: `Леди Гага` },
   },
 ];
 
@@ -66,7 +81,7 @@ const CarouselContext = createContext<{
   handleShowNextSlide: () => null,
 });
 
-const Carousel = () => {
+const Carousel = ({ lang }: { lang?: "ru" }) => {
   const [selectedSlide, setSelectedSlide] = useState(0);
 
   function handleShowNextSlide() {
@@ -87,6 +102,7 @@ const Carousel = () => {
         <ol className={styles["carousel__slide-list"]}>
           {slides.map((slide, index) => (
             <Slide
+              lang={lang}
               key={slide.id}
               slide={slide}
               isSelected={selectedSlide === index}
@@ -121,9 +137,11 @@ const Carousel = () => {
 };
 
 const Slide = ({
+  lang,
   slide,
   isSelected,
 }: {
+  lang?: "ru";
   slide: Slide;
   isSelected: boolean;
 }) => {
@@ -136,18 +154,20 @@ const Slide = ({
     >
       <Image
         src={slide.image}
-        alt={slide.author}
+        alt={lang === "ru" ? slide.author.ru : slide.author.en}
         className={styles.slide__image}
       />
 
       <div className={styles["slide__text-content"]}>
         <p className={styles.slide__description}>
           <LeftMarkSVG className={styles["slide__left-mark"]} />
-          {slide.description}
+          {lang === "ru" ? slide.description.ru : slide.description.en}
           <RightMarkSVG className={styles["slide__right-mark"]} />
         </p>
 
-        <p className={styles.slide__author}>{slide.author}</p>
+        <p className={styles.slide__author}>
+          {lang === "ru" ? slide.author.ru : slide.author.en}
+        </p>
       </div>
 
       <button

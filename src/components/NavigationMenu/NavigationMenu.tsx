@@ -7,7 +7,7 @@ import { merriweather } from "@/utilities/fonts";
 
 import styles from "./NavigationMenu.module.scss";
 
-const NavigationMenu = () => {
+const NavigationMenu = ({ lang }: { lang?: "ru" }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   function handleToggleOpen() {
@@ -42,7 +42,7 @@ const NavigationMenu = () => {
               href="#steps"
               className={`${styles["navigation-menu__link"] ?? ""} ${merriweather.className}`}
             >
-              How it works
+              {lang === "ru" ? "Как это работает" : "How it works"}
             </a>
           </li>
 
@@ -51,7 +51,7 @@ const NavigationMenu = () => {
               href="#statistics"
               className={`${styles["navigation-menu__link"] ?? ""} ${merriweather.className}`}
             >
-              Statistics
+              {lang === "ru" ? "Статистика" : "Statistics"}
             </a>
           </li>
 
@@ -60,7 +60,7 @@ const NavigationMenu = () => {
               href="#tabs"
               className={`${styles["navigation-menu__link"] ?? ""} ${merriweather.className}`}
             >
-              What is bullying?
+              {lang === "ru" ? "Что такое буллинг?" : "What is bullying?"}
             </a>
           </li>
 
@@ -69,7 +69,7 @@ const NavigationMenu = () => {
               href="#carousel"
               className={`${styles["navigation-menu__link"] ?? ""} ${merriweather.className}`}
             >
-              Motivation
+              {lang === "ru" ? "Мотивация" : "Motivation"}
             </a>
           </li>
 
@@ -78,13 +78,16 @@ const NavigationMenu = () => {
               href="#contacts"
               className={`${styles["navigation-menu__link"] ?? ""} ${merriweather.className}`}
             >
-              Contacts
+              {lang === "ru" ? "Контакты" : "Contacts"}
             </a>
           </li>
 
           <li className={styles["navigation-menu__list-item"]}>
-            <Link href="/quiz" className={styles["navigation-menu__cta"]}>
-              Take the quiz
+            <Link
+              href={lang === "ru" ? "/ru/quiz" : "/quiz"}
+              className={styles["navigation-menu__cta"]}
+            >
+              {lang === "ru" ? "Пройти викторину" : "Take the quiz"}
             </Link>
           </li>
         </ul>

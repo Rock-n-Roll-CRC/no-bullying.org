@@ -11,46 +11,74 @@ const statistics = [
     id: 1,
     icon: Statistic1,
     value: "20.2%",
-    description: (
-      <>
-        of surveyed students report
-        <br />
-        being bullied
-      </>
-    ),
+    description: {
+      en: (
+        <>
+          of surveyed students report
+          <br />
+          being bullied
+        </>
+      ),
+      ru: (
+        <>
+          опрошенных студентов жалуются
+          <br />
+          на буллинг
+        </>
+      ),
+    },
   },
   {
     id: 2,
     icon: Statistic2,
     value: "46.0%",
-    description: (
-      <>
-        of bullyied students notified
-        <br />
-        an adult at school
-      </>
-    ),
+    description: {
+      en: (
+        <>
+          of bullyied students notified
+          <br />
+          an adult at school
+        </>
+      ),
+      ru: (
+        <>
+          студентов которые подверглись буллингу
+          <br />
+          сообщили об этом взрослому в школе
+        </>
+      ),
+    },
   },
   {
     id: 3,
     icon: Statistic3,
     value: "41.0%",
-    description: (
-      <>
-        of bullied students think that
-        <br />
-        the bullying will not stop
-      </>
-    ),
+    description: {
+      en: (
+        <>
+          of bullied students think that
+          <br />
+          the bullying will not stop
+        </>
+      ),
+      ru: (
+        <>
+          студентов которые подверглись буллингу
+          <br />
+          считают что буллинг не прекратится
+        </>
+      ),
+    },
   },
 ];
 
-const Statistics = () => {
+const Statistics = ({ lang }: { lang?: "ru" }) => {
   return (
     <section className={styles.statistics} id="statistics">
       <ul className={styles.statistics__list}>
         {statistics.map((statisticsItem) => (
           <StatisticsItem
+            lang={lang}
             key={statisticsItem.id}
             Icon={statisticsItem.icon}
             value={statisticsItem.value}

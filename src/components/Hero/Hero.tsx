@@ -7,7 +7,7 @@ import backgroundImage from "@/assets/images/hero.webp";
 
 import styles from "./Hero.module.scss";
 
-const Hero = () => {
+const Hero = ({ lang }: { lang?: "ru" }) => {
   return (
     <section className={styles.hero}>
       <Image
@@ -19,21 +19,46 @@ const Hero = () => {
       />
 
       <h2 className={`${styles.hero__heading ?? ""} ${merriweather.className}`}>
-        You want to stop bullying,
-        <br />
-        we know what you need to do.
-        <br />
-        Let&apos;s work together.
+        {lang === "ru" ? (
+          <>
+            Вы хотите остановить буллинг,
+            <br />
+            мы знаем, что вам нужно делать.
+            <br />
+            Давайте работать вместе.
+          </>
+        ) : (
+          <>
+            You want to stop bullying,
+            <br />
+            we know what you need to do.
+            <br />
+            Let&apos;s work together.
+          </>
+        )}
       </h2>
 
       <p className={styles.hero__description}>
-        Find the right instructions to follow,
-        <br />
-        personalized just for you.
+        {lang === "ru" ? (
+          <>
+            Найдите правильные инструкции,
+            <br />
+            специально для вас.
+          </>
+        ) : (
+          <>
+            Find the right instructions to follow,
+            <br />
+            personalized just for you.
+          </>
+        )}
       </p>
 
-      <Link href="/quiz" className={styles.hero__cta}>
-        Take the quiz
+      <Link
+        href={lang === "ru" ? "/ru/quiz" : "/quiz"}
+        className={styles.hero__cta}
+      >
+        {lang === "ru" ? "Пройти викторину" : "Take the quiz"}
       </Link>
     </section>
   );

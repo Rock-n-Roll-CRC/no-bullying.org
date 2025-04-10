@@ -9,7 +9,7 @@ import GlobeSVG from "@/assets/icons/globe.svg";
 
 import styles from "./LanguageSelect.module.scss";
 
-const LanguageSelect = () => {
+const LanguageSelect = ({ lang }: { lang?: "ru" }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   function handleToggleOpen() {
@@ -29,9 +29,9 @@ const LanguageSelect = () => {
         <div
           className={`${styles["language-select__body"] ?? ""} ${merriweather.className}`}
         >
-          <Link href="/">english</Link>
+          <Link href="/">{lang === "ru" ? "английский" : "english"}</Link>
 
-          <Link href="/ru">russian</Link>
+          <Link href="/ru">{lang === "ru" ? "русский" : "russian"}</Link>
         </div>
       )}
     </div>
