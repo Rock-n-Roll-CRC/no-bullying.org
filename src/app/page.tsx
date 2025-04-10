@@ -9,6 +9,7 @@ import Statistics from "@/components/Statistics/Statistics";
 import Tabs from "@/components/Tabs/Tabs";
 import Carousel from "@/components/Carousel/Carousel";
 import Contacts from "@/components/Contacts/Contacts";
+import Footer from "@/components/Footer/Footer";
 
 const Page = () => {
   return (
@@ -36,6 +37,8 @@ const Page = () => {
 
         <Contacts />
       </Main>
+
+      <Footer />
     </>
   );
 };
