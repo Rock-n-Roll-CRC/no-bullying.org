@@ -1,0 +1,242 @@
+/* stylelint-disable scale-unlimited/declaration-strict-value */
+/* stylelint-disable plugin/use-defensive-css */
+/* stylelint-disable plugin/use-logical-units */
+/* stylelint-disable plugin/use-logical-properties-and-values */
+
+@use "../../styles/settings" as *;
+@use "../../styles/tools" as *;
+
+.quiz {
+  position: relative;
+  min-height: 90vh;
+  padding-top: 11rem;
+  padding-bottom: 5rem;
+  color: $color-grey;
+  text-align: center;
+
+  &__image {
+    @include dimensions(100%, 100%);
+    @include position($position: absolute, $top: 0, $left: 0);
+
+    z-index: -999;
+    object-fit: cover;
+
+    @include media-down(quiz-results) {
+      position: fixed;
+    }
+  }
+
+  &__list {
+    margin-bottom: $gap-medium;
+  }
+
+  &__next-button {
+    @include colors($color-grey, $color-main);
+    @include font($size: $fs-medium, $weight: $fw-semi-bold);
+
+    width: 30rem;
+    padding: 1.5rem 2rem;
+    cursor: pointer;
+    border-radius: $br-maximum;
+
+    &--hidden {
+      display: none;
+    }
+  }
+}
+
+.question {
+  display: none;
+
+  &--selected {
+    @include flex($direction: column, $align: center, $gap: $gap-large);
+  }
+
+  &__heading-box {
+    @include flex($direction: column, $gap: $gap-small);
+  }
+
+  &__label {
+    @include font($size: $fs-extra-small, $weight: $fw-bold);
+
+    text-transform: uppercase;
+    letter-spacing: $ls-large;
+  }
+
+  &__heading {
+    @include font($size: $fs-large, $weight: $fw-semi-bold);
+
+    letter-spacing: $ls-small;
+  }
+
+  &__answers-list {
+    @include flex($direction: column, $gap: $gap-small);
+
+    width: 30rem;
+  }
+}
+
+.answer {
+  display: flex;
+
+  &__button {
+    flex: 1;
+    padding: 1.5rem 2rem;
+    cursor: pointer;
+    border-radius: $br-maximum;
+
+    @include colors($color-main, $color-grey);
+    @include font($size: $fs-medium, $weight: $fw-semi-bold);
+
+    &--selected {
+      @include colors($color-grey, $color-main);
+    }
+  }
+}
+
+.results {
+  @include flex(column, center, center, $gap-medium);
+
+  &__heading {
+    @include font($size: $fs-large, $weight: $fw-bold);
+
+    letter-spacing: $ls-small;
+  }
+
+  &__main-container {
+    @include flex($align: center, $gap: $gap-large);
+
+    @include media-down(laptop) {
+      flex-direction: column;
+    }
+  }
+
+  &__sub-container {
+    @include flex(
+      $direction: column,
+      $justify: center,
+      $align: center,
+      $gap: $gap-medium
+    );
+  }
+
+  &__list {
+    @include flex(column, center, center, $gap-medium);
+  }
+
+  &__tip-list {
+    @include flex($direction: column, $justify: center, $gap: $gap-medium);
+
+    padding: 2rem 2.5rem;
+    background-color: $color-main;
+    border-radius: $br-medium;
+
+    @include media-down(quiz-results) {
+      margin: 0 5rem;
+    }
+  }
+
+  &__violence-list {
+    @include flex($direction: column, $justify: center, $gap: $gap-small);
+
+    padding: 1rem 1.5rem;
+    background-color: $color-grey;
+    border-radius: $br-medium;
+
+    &--hidden {
+      display: none;
+    }
+
+    &--no-gap {
+      gap: 0;
+    }
+
+    @include media-down(quiz-results) {
+      margin: 0 5rem;
+    }
+  }
+}
+
+.role {
+  @include flex($align: center, $justify: center, $gap: $gap-small);
+
+  &__heading {
+    @include font($size: $fs-medium, $weight: $fw-semi-bold);
+
+    width: 12.5rem;
+    padding: 0.25rem;
+    color: $color-main;
+    text-align: center;
+    background-color: $color-grey;
+    border-radius: $br-small;
+  }
+
+  &__score-blocks {
+    @include flex($align: center, $justify: center);
+  }
+
+  &__score-block {
+    width: 1.5rem;
+    height: 3rem;
+    background-color: $color-grey;
+    border: 0.01rem solid $color-grey;
+    border-left: 0;
+
+    &:first-child {
+      border-left: 0.01rem solid $color-grey;
+    }
+
+    &--marked {
+      background-color: $color-main;
+    }
+
+    @include media-down(quiz-results) {
+      display: none;
+    }
+  }
+
+  &__score {
+    @include flex($align: center, $justify: center);
+    @include font($size: $fs-medium, $weight: $fw-bold);
+
+    width: 3.5rem;
+    height: 3.5rem;
+    color: $color-main;
+    background-color: $color-grey;
+    border-radius: $br-maximum;
+  }
+}
+
+.violence-item {
+  @include flex($align: center, $gap: $gap-small);
+
+  &__icon {
+    @include dimensions(3.5rem, 3.5rem);
+
+    &--hidden {
+      display: none;
+    }
+  }
+
+  &__description {
+    @include font($size: $fs-medium, $weight: $fw-medium);
+
+    color: $color-main;
+  }
+}
+
+.tip {
+  @include flex($direction: column, $justify: center, $gap: $gap-small);
+
+  max-width: 50rem;
+
+  &__heading {
+    @include font($size: $fs-medium, $weight: $fw-bold);
+
+    color: $color-accent;
+  }
+
+  &__description {
+    @include font($size: $fs-medium, $height: $lh-medium);
+  }
+}
