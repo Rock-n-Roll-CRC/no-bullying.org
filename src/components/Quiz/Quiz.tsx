@@ -3,7 +3,7 @@
 import type { Dispatch, ReactNode, SetStateAction } from "react";
 import { useState } from "react";
 
-import Image from "next/image";
+import ExportedImage from "next-image-export-optimizer";
 
 import { merriweather } from "@/utilities/fonts";
 
@@ -1125,7 +1125,7 @@ const Quiz = ({ lang }: { lang?: "ru" }) => {
 
   return (
     <section className={styles.quiz}>
-      <Image
+      <ExportedImage
         src={bgImage}
         alt=""
         sizes="100vw"

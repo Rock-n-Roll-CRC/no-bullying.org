@@ -3,7 +3,7 @@
 import type { StaticImageData } from "next/image";
 
 import { createContext, useContext, useState } from "react";
-import Image from "next/image";
+import ExportedImage from "next-image-export-optimizer";
 
 import Image1 from "@/assets/images/carousel/andrew-vachss.webp";
 import Image2 from "@/assets/images/carousel/heather-brewer.webp";
@@ -152,7 +152,7 @@ const Slide = ({
     <li
       className={`${styles.slide ?? ""} ${isSelected ? (styles["slide--selected"] ?? "") : ""}`}
     >
-      <Image
+      <ExportedImage
         src={slide.image}
         alt={lang === "ru" ? slide.author.ru : slide.author.en}
         className={styles.slide__image}

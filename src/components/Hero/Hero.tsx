@@ -1,4 +1,4 @@
-import Image from "next/image";
+import ExportedImage from "next-image-export-optimizer";
 import Link from "next/link";
 
 import { merriweather } from "@/utilities/fonts";
@@ -10,7 +10,7 @@ import styles from "./Hero.module.scss";
 const Hero = ({ lang }: { lang?: "ru" }) => {
   return (
     <section className={styles.hero}>
-      <Image
+      <ExportedImage
         src={backgroundImage}
         alt=""
         sizes="100vw"
