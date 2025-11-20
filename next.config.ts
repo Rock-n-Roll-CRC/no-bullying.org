@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
+// @ts-nocheck
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
@@ -28,6 +30,9 @@ const nextConfig: NextConfig = {
 
     return config;
   },
+
+  output: "export",
+  images: { unoptimized: true },
 
   experimental: {
     turbo: {

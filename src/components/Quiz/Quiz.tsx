@@ -7,7 +7,7 @@ import Image from "next/image";
 
 import { merriweather } from "@/utilities/fonts";
 
-import bgImage from "@/assets/images/quiz.webp";
+import bgImage from "@/assets/images/quiz.jpg";
 
 import AlertSVG from "@/assets/icons/alert.svg";
 
@@ -1128,8 +1128,10 @@ const Quiz = ({ lang }: { lang?: "ru" }) => {
       <Image
         src={bgImage}
         alt=""
+        sizes="100vw"
+        priority={true}
+        placeholder="blur"
         className={styles.quiz__image}
-        quality={100}
       />
 
       {isFinished ? (

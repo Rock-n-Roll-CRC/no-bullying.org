@@ -3,7 +3,7 @@ import Link from "next/link";
 
 import { merriweather } from "@/utilities/fonts";
 
-import backgroundImage from "@/assets/images/hero.webp";
+import backgroundImage from "@/assets/images/hero.jpg";
 
 import styles from "./Hero.module.scss";
 
@@ -13,9 +13,10 @@ const Hero = ({ lang }: { lang?: "ru" }) => {
       <Image
         src={backgroundImage}
         alt=""
-        quality={100}
+        sizes="100vw"
+        priority={true}
+        placeholder="blur"
         className={styles.hero__image}
-        decoding="async"
       />
 
       <h2 className={`${styles.hero__heading ?? ""} ${merriweather.className}`}>
