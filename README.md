@@ -1,4 +1,4 @@
-# no-bullying.org ([View Live](https://no-bullying.org))
+# no-bullying.org: Take the First Step ([View Live](https://no-bullying.org))
 
 ![Homepage screenshot](./public/screenshot.png)
 
@@ -21,7 +21,7 @@
 
 no-bullying.org is a **comprehensive web platform designed to help students, parents, and teachers understand, identify, and combat bullying**. The website provides educational resources about different types of bullying, their consequences, and most importantly, offers an interactive quiz that helps users identify their role in bullying environment and receive tailored advice to address their specific circumstances.
 
-The platform implies a static multi-page website built with TypeScript and Next.js to ensure fast page load times and SEO using Static Site Generation (SSG). The website incorporates modern and responsive UI with calm/peaceful design personality adopted to mobile, tablet and desktop screens built using SCSS Modules for granular component-first styling.
+The platform implies a static multi-page website built with TypeScript and Next.js to ensure fast page load times and SEO using Static Site Generation (SSG). The website incorporates modern and responsive UI with calm/peaceful design personality adapted to mobile, tablet and desktop screens built using SCSS Modules for granular component-first styling.
 
 ### Features
 
